@@ -14,12 +14,18 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('signup');
 });
+
+Route::get('/signin', function () {
+    return view('signin');
+})->name('login');
+
 
 Route::group(['prefix' => 'user'], function () {
 
     Route::post('account/create', 'UserController@create')->name('create.account');
+    Route::post('account/login', 'UserController@login')->name('login.account');
     Route::get('email/verify/{id}/{token}', 'UserController@verifyEmail')->name('verify.email');
     Route::get('/account/dashboard', 'UserController@dashboard')->name('dashboard');
   

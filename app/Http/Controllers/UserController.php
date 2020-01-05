@@ -57,6 +57,42 @@ class UserController extends Controller
 
     }
 
+    public function login(Request $request)
+    {
+        
+        try {
+            
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return back()
+                ->withErrors($validator)
+                ->withInput();
+            }
+
+            $credentials = $request->only('email', 'password');
+
+            if (Auth::attempt($credentials)) {
+
+                // Authentication passed...
+                return redirect()->intended('dashboard');
+
+            }else {
+                
+                return back()
+                ->withErrors("Incorrect Login Credentails");
+                
+            }
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+    }
+
     public function verifyEmail($id , $token)
     {
         

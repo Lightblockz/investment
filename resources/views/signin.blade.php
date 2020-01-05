@@ -125,39 +125,33 @@
 
                                     <div class="form-holder">
 
-                                       
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
 
-                                        <form action="{{route('create.account')}}" method="post">
+                                        <form action="{{route('login.account')}}" method="post">
 
                                             @csrf
 
                                             <div class="form-group">
-                                                <label for="">Firstname <small>(required)</small></label>
-                                                <input type="text" name="first_name" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="">Lastname </label>
-                                                <input type="text" name="last_name" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="">Email Address <small>(required)</small></label>
+                                                <label for="">Email Address</label>
                                                 <input type="email" name="email" class="form-control" id="">
                                             </div>
 
+                                            
                                             <div class="form-group">
-                                                <label for="">Confirm Email Address <small>(required)</small></label>
-                                                <input type="email" name="email_confirmation" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="">Password <small>(required)</small></label>
+                                                <label for="">Password</label>
                                                 <input type="password" name="password" class="form-control" id="">
                                             </div>
 
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                                                <button type="submit" class="btn btn-primary btn-block">Log in</button>
                                             </div>
 
                                         </form>
@@ -176,4 +170,5 @@
 
         </div>
     </body>
+
 </html>
