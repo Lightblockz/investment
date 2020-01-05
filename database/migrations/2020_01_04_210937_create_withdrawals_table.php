@@ -15,7 +15,9 @@ class CreateWithdrawalsTable extends Migration
     {
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('amount')->default(0);
+            $table->string('status')->default('pending');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

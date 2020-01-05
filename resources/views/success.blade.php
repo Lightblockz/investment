@@ -71,8 +71,8 @@
                 text-align: left !important;
             }
 
-            button.btn.btn-primary.btn-block {
-                padding: 13px;
+            button.btn.btn-primary {
+                padding: 13px 25px;
                 font-size: 14px;
                 font-weight: 600;
             }
@@ -84,6 +84,11 @@
                 padding: 10px 0px;
             }
 
+
+            h4{
+                line-height: 25px;
+            }
+
             .alert-danger ul {
                 list-style: decimal;
             }
@@ -91,6 +96,11 @@
             small {
                 color: red;
                 font-size: 11px;
+            }
+
+            h2.verify-title.text-center {
+                margin-bottom: 20px;
+                font-weight: 600;
             }
 
         </style>
@@ -117,51 +127,27 @@
                         
                         <div class="row">
 
-                            <div class="col-md-offset-4 col-md-4">
+                            <div class="col-md-offset-3 col-md-6">
 
-                                <h2 class="text-center">LightBlocks</h2>
+                                <h2 class="verify-title text-center">Verify your Email Address</h2>
 
                                 <div class="form-section">
 
-                                    <div class="form-holder">
+                                   <h3> <strong>Welcome onboard {{$name}} !</strong> </h3>
 
-                                       
+                                   <h4>Your account has been successfully created</h4>
 
-                                        <form action="{{route('create.account')}}" method="post">
+                                    <h4>An email has been sent to {{$email}}, Kindly follow the instructions in the email to complete your registration.</h4>
 
-                                            @csrf
+                                    <h4> <strong>Didn't receive the email?</strong> </h4>
 
-                                            <div class="form-group">
-                                                <label for="">Firstname <small>(required)</small></label>
-                                                <input type="text" name="first_name" class="form-control" id="">
-                                            </div>
+                                    <ul>
+                                        <li>Make sure your email address is entered correctly.</li>
+                                        <li>Check your Spam or Junk folders</li>
+                                    </ul>
 
-                                            <div class="form-group">
-                                                <label for="">Lastname </label>
-                                                <input type="text" name="last_name" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="">Email Address <small>(required)</small></label>
-                                                <input type="email" name="email" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="">Confirm Email Address <small>(required)</small></label>
-                                                <input type="email" name="email_confirmation" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="">Password <small>(required)</small></label>
-                                                <input type="password" name="password" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
-                                            </div>
-
-                                        </form>
-
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-primary">Resend Email</button>
                                     </div>
 
                                 </div>

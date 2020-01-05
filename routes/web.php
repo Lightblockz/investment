@@ -11,6 +11,16 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'user'], function () {
+
+    Route::post('account/create', 'UserController@create')->name('create.account');
+    Route::get('email/verify/{id}/{token}', 'UserController@verifyEmail')->name('verify.email');
+    Route::get('/account/dashboard', 'UserController@dashboard')->name('dashboard');
+  
 });
