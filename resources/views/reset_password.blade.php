@@ -119,7 +119,7 @@
 
                             <div class="col-md-offset-4 col-md-4">
 
-                                <h2 class="text-center">LightBlocks</h2>
+                                <h2 class="text-center">Reset your LightBlocks password</h2>
 
                                 <div class="form-section">
 
@@ -135,27 +135,25 @@
                                             </div>
                                         @endif
 
-                                        <form action="{{route('login.account')}}" method="post">
+                                        <form action="{{route('update.password')}}" method="post">
 
                                             @csrf
 
-                                            <div class="form-group">
-                                                <label for="">Email Address</label>
-                                                <input type="email" name="email" class="form-control" id="">
-                                            </div>
+                                            <input type="hidden" name="email" value="{{$email}}">
 
-                                            
                                             <div class="form-group">
                                                 <label for="">Password</label>
                                                 <input type="password" name="password" class="form-control" id="">
                                             </div>
 
+                                            
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                                                <label for="">Confirm Password</label>
+                                                <input type="password" name="password_confirmation" class="form-control" id="">
                                             </div>
 
                                             <div class="form-group">
-                                                <a href="{{route('forgot.password')}}" class="signup-signin">Forgot password?</a>
+                                                <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
                                             </div>
 
                                         </form>

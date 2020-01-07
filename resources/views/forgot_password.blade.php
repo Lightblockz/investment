@@ -135,7 +135,7 @@
                                             </div>
                                         @endif
 
-                                        <form action="{{route('login.account')}}" method="post">
+                                        <form action="{{route('reset.password')}}" method="post">
 
                                             @csrf
 
@@ -144,18 +144,12 @@
                                                 <input type="email" name="email" class="form-control" id="">
                                             </div>
 
-                                            
                                             <div class="form-group">
-                                                <label for="">Password</label>
-                                                <input type="password" name="password" class="form-control" id="">
+                                                <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
                                             </div>
 
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Log in</button>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <a href="{{route('forgot.password')}}" class="signup-signin">Forgot password?</a>
+                                            <div class="form-group text-center">
+                                                <a href="{{route('login')}}" class="signup-signin">Login</a>
                                             </div>
 
                                         </form>

@@ -4,15 +4,42 @@ namespace App\Http\Repositories;
 
 use DB;
 use App\User;
+use App\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
-class UserRepository{
+class UserRepository
+{
 
     public function emailExist($email)
     {
         $emailExist = User::whereEmail($email)->exists();
         return $emailExist;
+    }
+
+    public function initiatePasswordReset($email)
+    {
+
+        return DB::transaction(function() use ($email) {
+            
+            $token = substr(md5(time()), 0, 200);
+            
+            $userExist =  User::whereEmail($email)->first();
+
+            $userExist->update([
+                'token' => $token
+            ]);
+
+            if ($userExist) {
+                
+                return $userExist;
+
+            }
+
+            return false;
+            
+         });
+
     }
 
     public function create($request)
@@ -72,6 +99,58 @@ class UserRepository{
             ]);
 
             return true;
+            
+         });
+
+    }
+
+    public function fetchUserByTokenForPasswordReset($email , $token)
+    {
+        
+        return DB::transaction(function() use ($email , $token) {
+            
+            $userExist =  User::whereEmail($email)->where('token' , $token)->first();
+ 
+            if ($userExist == null) {
+                
+                 return false;
+ 
+            }
+
+            return $userExist;
+            
+         });
+
+    }
+
+    public function updatePassword($request)
+    {
+        
+        return DB::transaction(function() use ($request) {
+            
+            $user =  User::whereEmail($request->email)->first();
+ 
+            if ($user == null) {
+                
+                 return false;
+ 
+            }
+
+            $update = $user->update([
+                'token' => '',
+                'password' => $request->password,
+                'last_login' => Carbon::now()->toDateTimeString()
+            ]);
+
+            if ($update) {
+               
+                Auth::login($user, true);
+
+                return true;
+
+            }
+
+            return false;
             
          });
 

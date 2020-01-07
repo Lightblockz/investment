@@ -71,8 +71,8 @@
                 text-align: left !important;
             }
 
-            button.btn.btn-primary.btn-block {
-                padding: 13px;
+            button.btn.btn-primary {
+                padding: 13px 25px;
                 font-size: 14px;
                 font-weight: 600;
             }
@@ -84,6 +84,11 @@
                 padding: 10px 0px;
             }
 
+
+            h4{
+                line-height: 25px;
+            }
+
             .alert-danger ul {
                 list-style: decimal;
             }
@@ -91,6 +96,11 @@
             small {
                 color: red;
                 font-size: 11px;
+            }
+
+            h2.verify-title.text-center {
+                margin-bottom: 20px;
+                font-weight: 600;
             }
 
         </style>
@@ -117,49 +127,27 @@
                         
                         <div class="row">
 
-                            <div class="col-md-offset-4 col-md-4">
+                            <div class="col-md-offset-3 col-md-6">
 
-                                <h2 class="text-center">LightBlocks</h2>
+                                <h2 class="verify-title text-center">Reset Password Email Sent</h2>
 
                                 <div class="form-section">
 
-                                    <div class="form-holder">
+                                   <h3> <strong>Hello {{$name}},</strong> </h3>
 
-                                        @if ($errors->any())
-                                            <div class="alert alert-danger">
-                                                <ul>
-                                                    @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        @endif
+                                   <h4>Your password reset request was successfully sent.</h4>
 
-                                        <form action="{{route('login.account')}}" method="post">
+                                    <h4>An email has been sent to the email address registered with your LightBlocks account. Please follow the instructions in the email to set a new password.</h4>
 
-                                            @csrf
+                                    <h4> <strong>Didn't receive the email?</strong> </h4>
 
-                                            <div class="form-group">
-                                                <label for="">Email Address</label>
-                                                <input type="email" name="email" class="form-control" id="">
-                                            </div>
+                                    <ul>
+                                        <li>Make sure your email address is entered correctly.</li>
+                                        <li>Check your Spam or Junk folders</li>
+                                    </ul>
 
-                                            
-                                            <div class="form-group">
-                                                <label for="">Password</label>
-                                                <input type="password" name="password" class="form-control" id="">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Log in</button>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <a href="{{route('forgot.password')}}" class="signup-signin">Forgot password?</a>
-                                            </div>
-
-                                        </form>
-
+                                    <div class="form-group text-center">
+                                        <a href="{{route('forgot.password')}}" class="btn btn-primary">Try again</a>
                                     </div>
 
                                 </div>
@@ -174,5 +162,4 @@
 
         </div>
     </body>
-
 </html>
