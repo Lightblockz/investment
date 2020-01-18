@@ -71,13 +71,13 @@ function investNow() {
                   url: url,
                   data: formData,
                   success: function (data) {
-                    console.log(data);
                     
-                    // swal("Great!", `${title} was successfully added to your cart`, "success");
+                    location.reload();
       
                   },
                   error: function (data) {
                     console.log(data);
+                    
                     // swal("Oops!", "Sorry item could not be added, Please try again!", "error");
                   }
               });

@@ -91,8 +91,10 @@ class UserController extends Controller
 
             $credentials = $request->only('email', 'password');
 
-            if (Auth::attempt($credentials)) {
+            
 
+            if (Auth::attempt($credentials)) {
+                
                 // Authentication passed...
                 return redirect()->intended('user/account/dashboard');
 
@@ -234,9 +236,9 @@ class UserController extends Controller
     {
         
 
-        $start_date = Carbon::now();
+        $start_date = Carbon::today();
 
-        $date = Carbon::now();
+        $date = Carbon::today();
 
         $end_date = $date->addDays($request->duration);
 

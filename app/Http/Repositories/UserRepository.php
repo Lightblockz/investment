@@ -172,6 +172,7 @@ class UserRepository
 
     public function getUserDetails()
     {
+
         $user = User::with('wallet')
                 ->with('transactions')
                 ->with('investments')

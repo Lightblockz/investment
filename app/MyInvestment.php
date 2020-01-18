@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UsesUuid;
 
 class MyInvestment extends Model
 {
+    use UsesUuid;
     
     /**
      * The attributes that are mass assignable.
@@ -13,6 +15,7 @@ class MyInvestment extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'user_id', 
         'reference_id', 
         'amount' , 
@@ -25,7 +28,8 @@ class MyInvestment extends Model
         'expected_monthly_interest',
         'interest_paid',
         'expected_total_interest',
-        'total_withdrawable_amount'
+        'total_withdrawable_amount',
+        'last_processed_date'
     ];
 
 

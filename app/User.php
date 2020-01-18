@@ -6,10 +6,14 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use App\Traits\UsesUuid;
+
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable , UsesUuid;
+
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'phone' , 'token' , 'email_verified_at' , 'last_login'
+        'id', 'first_name', 'last_name', 'email', 'password', 'phone' , 'token' , 'email_verified_at' , 'last_login'
     ];
 
     /**
@@ -75,4 +79,5 @@ class User extends Authenticatable
     {
         return $this->hasOneThrough('App\InvestmentPlan', 'App\MyInvestment');
     }
+
 }

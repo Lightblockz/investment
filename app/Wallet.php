@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UsesUuid;
 
 class Wallet extends Model
 {
+    use UsesUuid;
     
     /**
      * The attributes that are mass assignable.
@@ -13,7 +15,7 @@ class Wallet extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'available_balance', 'wallet_id'
+        'id', 'user_id', 'available_balance', 'wallet_id'
     ];
 
 

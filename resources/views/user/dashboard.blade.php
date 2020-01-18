@@ -13,7 +13,7 @@
 				<!-- begin col-3 -->
 				<div class="col-lg-4 col-md-6">
 					<div class="widget widget-stats bg-gradient-teal">
-						<div class="stats-icon stats-icon-lg"><i class="fa fa-globe fa-fw"></i></div>
+						<div class="stats-icon stats-icon-lg"><i class="fa fa-wallet fa-fw"></i></div>
 						<div class="stats-content">
                             <div class="stats-title wallet-title">WALLET ID : {{$user->wallet->wallet_id}}</div>
                             {{-- <div class="stats-title">BALANCE:</div> --}}
@@ -24,13 +24,13 @@
                                     <div class="stats-desc">
                                         {{-- <script src="https://js.paystack.co/v1/inline.js"></script>
                                         <button type="button" onclick="goFeature()" class="btn-get-started feature-subscribe-btn btn-block"> Pay now </button> --}}
-                                        <a href="" class="btn btn-primary btn-block fundwallet">Fund Wallet</a>
+                                        {{-- <a href="" class="btn btn-primary btn-block fundwallet">Fund Wallet</a> --}}
                                     </div>
                                 </div>
     
                                 <div class="col-md-6">
                                     <div class="stats-desc">
-                                        <a href="" class="btn btn-primary btn-block withdraw">Withdraw Fund</a>
+                                        <a href="" class="btn btn-primary btn-block fundwallet">Withdraw Fund</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
 				<!-- begin col-3 -->
 				<div class="col-lg-4 col-md-6">
 					<div class="widget widget-stats bg-gradient-purple">
-						<div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
+						<div class="stats-icon stats-icon-lg"><i class="fa fa-globe fa-fw"></i></div>
 						<div class="stats-content">
 							<div class="stats-title">TOTAL WITHDRAWAL</div>
 							<div class="stats-number">38,900</div>
@@ -107,49 +107,55 @@
 
 				<div class="panel-body col-md-12">
 
-					<table id="data-table-combine" class="table table-bordered myinvestment-table">
-						<thead>
-							<tr>
-								{{-- <th width="1%"></th> --}}
-								<th class="text-nowrap">Reference ID</th>
-								<th class="text-nowrap">Capital</th>
-								<th class="text-nowrap">Interest Rate (%)</th>
-								<th class="text-nowrap">Expected Monthly Income</th>
-								<th class="text-nowrap">Total Withrawable Amount</th>
-								<th class="text-nowrap">Interest Paid</th>
-								<th class="text-nowrap">Start Date</th>
-								<th class="text-nowrap">Close Date</th>
-								<th class="text-nowrap">Status</th>
-								
-								
-								
-							</tr>
-						</thead>
-						<tbody>
-							@php
-								$i = 1; 
-							@endphp
+					<div class="table-responsive">
 
-							@foreach($user->investments as $investment)
-
-								<tr class="odd gradeX">
-									{{-- <td width="1%" class="f-s-600 text-inverse">{{ $i }}</td>	 --}}
-									<td>{{ $investment->reference_id }}</td>
-									<td>{{ $investment->amount }}</td>
-									<td>{{ $investment->interest }}</td>
-									<td>{{ $investment->expected_monthly_interest }}</td>
-									<td>{{ $investment->total_withdrawable_amount }}</td>
-									<td>{{ $investment->interest_paid }}</td>
-									<td>{{ $investment->start_date }}</td>
-									<td>{{ $investment->end_date }}</td>
-									<td>{{ $investment->status }}</td>
+						<table id="data-table-combine" class="table table-bordered myinvestment-table">
+							<thead>
+								<tr>
+									{{-- <th width="1%"></th> --}}
+									<th class="text-nowrap">Reference ID</th>
+									<th class="text-nowrap">Capital (₦)</th>
+									<th class="text-nowrap">Interest Rate (%)</th>
+									{{-- <th class="text-nowrap">Expected Monthly Income (₦)</th> --}}
+									<th class="text-nowrap">Total Withrawable Amount (₦)</th>
+									<th class="text-nowrap">Interest Paid</th>
+									<th class="text-nowrap">Start Date</th>
+									<th class="text-nowrap">Close Date</th>
+									<th class="text-nowrap">Status</th>
+									
+									
+									
 								</tr>
+							</thead>
+							<tbody>
+								@php
+									$i = 1; 
+								@endphp
+	
+								@foreach($user->investments as $investment)
+	
+									<tr class="odd gradeX">
+										{{-- <td width="1%" class="f-s-600 text-inverse">{{ $i }}</td>	 --}}
+										<td>{{ $investment->reference_id }}</td>
+										<td>{{ number_format($investment->amount) }}</td>
+										<td>{{ $investment->interest }}</td>
+										{{-- <td>{{ $investment->expected_monthly_interest }}</td> --}}
+										<td>{{ number_format($investment->total_withdrawable_amount) }}</td>
+										<td>{{ number_format($investment->interest_paid) }}</td>
+										<td>{{ $investment->start_date }}</td>
+										<td>{{ $investment->end_date }}</td>
+										<td>{{ $investment->status }}</td>
+									</tr>
+	
+								@endforeach
+	
+	
+							</tbody>
+						</table>
 
-							@endforeach
+					</div>
 
 
-						</tbody>
-					</table>
 				</div>
 
 			</div>

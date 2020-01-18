@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UsesUuid;
 
 class Transaction extends Model
 {
+    
+    use UsesUuid;
     
     /**
      * The attributes that are mass assignable.
@@ -13,7 +16,7 @@ class Transaction extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'reference_id', 'amount'
+        'user_id', 'reference_id', 'amount' , 'id'
     ];
 
     /**

@@ -14,7 +14,7 @@ class CreateIdentityVerificationsTable extends Migration
     public function up()
     {
         Schema::create('identity_verifications', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->timestamps();
         });
     }

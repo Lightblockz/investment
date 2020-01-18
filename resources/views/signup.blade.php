@@ -7,18 +7,39 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700i&display=swap" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #37474f;
+                background-color: #1c2835;
                 color: #fff;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Fira Sans', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+            }
+
+            input.form-control {
+                border: none !important;
+                border-bottom: 1px solid #1c283547 !important;
+                border-radius: 0px !important;
+                opacity: 0.8;
+            }
+
+            .signup-iblock.text-center {
+                margin-top: 15px;
+            }
+
+            a.signin-signup {
+                color: #fff;
+                /* margin-top: 20px !important; */
+            }
+
+            img.img-responsive.outer-logo {
+                width: 270px;
+                margin-bottom: 20px;
             }
 
             .form-section {
@@ -26,6 +47,7 @@
                 padding: 30px;
                 border-radius: 4px;
                 color: #37474f;
+                box-shadow: 0 10px 30px 0 rgba(0,0,0,.15) !important;
             }
             
 
@@ -69,12 +91,22 @@
 
             label {
                 text-align: left !important;
+                font-weight: 400;
+            }
+
+            a.signup-signin {
+                color: #1c2835;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 13px;
             }
 
             button.btn.btn-primary.btn-block {
                 padding: 13px;
                 font-size: 14px;
                 font-weight: 600;
+                background: #1c2835;
+                border: 1px solid #1c2835;
             }
 
             .alert-danger {
@@ -93,33 +125,35 @@
                 font-size: 11px;
             }
 
+            @media (max-width:768px) {
+                img.img-responsive.outer-logo.center-block {
+                    width: 200px;
+                    margin-bottom: 20px;
+                }
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            
 
             <div class="content">
                 
                     <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-md-offset-4 col-md-4">
+                                <div class="logo-group">
+                                    <img src="{{ asset('img/lightblockswhite.png') }}" class="img-responsive outer-logo center-block" alt="">
+                                </div>
+                            </div>
+
+                        </div>
                         
                         <div class="row">
 
                             <div class="col-md-offset-4 col-md-4">
-
-                                <h2 class="text-center">LightBlocks</h2>
 
                                 <div class="form-section">
 
@@ -140,7 +174,7 @@
                                             @csrf
 
                                             <div class="form-group">
-                                                <label for="">Firstname <small>(required)</small></label>
+                                                <label for="">Firstname <small>*</small></label>
                                                 <input type="text" name="first_name" class="form-control" id="">
                                             </div>
 
@@ -150,17 +184,17 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="">Email Address <small>(required)</small></label>
+                                                <label for="">Email Address <small>*</small></label>
                                                 <input type="email" name="email" class="form-control" id="">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="">Confirm Email Address <small>(required)</small></label>
+                                                <label for="">Confirm Email Address <small>*</small></label>
                                                 <input type="email" name="email_confirmation" class="form-control" id="">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="">Password <small>(required)</small></label>
+                                                <label for="">Password <small>*</small></label>
                                                 <input type="password" name="password" class="form-control" id="">
                                             </div>
 
@@ -168,15 +202,14 @@
                                                 <button type="submit" class="btn btn-primary btn-block">Create Account</button>
                                             </div>
 
-                                            <div class="form-group text-center">
-                                                <a href="{{route('login')}}" class="signup-signin">Login</a>
-                                            </div>
-                                            
-
                                         </form>
 
                                     </div>
 
+                                </div>
+
+                                <div class="signup-iblock text-center">
+                                    <a href="{{route('login')}}" class="signin-signup">Already have an account? Sign in</a>
                                 </div>
 
                             </div>

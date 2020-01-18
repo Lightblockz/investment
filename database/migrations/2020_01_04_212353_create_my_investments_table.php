@@ -14,14 +14,15 @@ class CreateMyInvestmentsTable extends Migration
     public function up()
     {
         Schema::create('my_investments', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->uuid('id')->primary();
+            $table->string('user_id');
             $table->bigInteger('investment_plan_id')->unsigned();
             $table->string('reference_id');
             $table->string('duration');
             $table->bigInteger('amount');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->dateTime('last_processed_date')->nullable();
             $table->double('interest', 3, 2);
             $table->bigInteger('expected_monthly_interest')->nullable();
             $table->bigInteger('interest_paid')->nullable();

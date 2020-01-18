@@ -29,6 +29,7 @@ class MyInvestmentRepository
                 'duration' => $request->duration,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
+                'last_processed_date' => $request->start_date,
                 'interest' => $request->interest,
                 'expected_monthly_interest' => $request->expected_monthly_interest,
                 'interest_paid' => $request->interest_paid,

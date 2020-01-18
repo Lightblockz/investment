@@ -11,10 +11,28 @@
     padding-left: 100%;
 }
 
+.header .navbar-brand img, .sidebar .nav>li.nav-profile .image img, .sidebar .nav>li>a .icon-img img {
+    max-width: 100%;
+    max-height: auto !important;
+    height: auto;
+}
+
 body {
     scroll-behavior: auto;
     background: #1c2835;
     color: #d6d6d6 !important;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+
+    color: #bebdc2;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background: #1c2835!important;
+    border-color: #a4a9ae!important;
+    color: #fff;
 }
 
 .table.table-bordered>thead:first-child>tr:first-child>td, .table.table-bordered>thead:first-child>tr:first-child>th {
@@ -35,11 +53,17 @@ body {
     top: 0;
     bottom: 0;
     color: #fff;
-    border-right: 1px solid #1a242f;
+    border-right: 1px solid #34485f69;
+}
+
+img.img-responsive.inner-logo.center-block {
+    width: 135px;
 }
 
 .header.navbar-default {
     background: #1a242f;
+    padding: 5px;
+    border-bottom: 1px solid #34485f69;
 }
 
 a.btn.btn-primary.btn-block.fundwallet {
@@ -167,7 +191,7 @@ select#plan_amount {
 .header.navbar-default .brand, .header.navbar-default .navbar-brand {
     color: #f5be2e;
     font-size: 25px;
-    padding: 20px;
+    /* padding: 0px; */
 }
 
 .leftPanel{
@@ -219,6 +243,26 @@ scp ubuntu@3.20.44.152:/var/www/research-frontend/public/consents  C:\Users\Chid
 @media (max-width:760px){
     .questionpadding {
         padding: 40px 40px !important
+    }
+
+    .sidebar, .sidebar-bg {   
+        left: -2000px;
+    }
+
+    .navbar-header {
+        border-bottom: none;
+    }
+
+    .page-header-fixed {
+        padding-top: 0px;
+    }
+
+    .dt-buttons.btn-group {
+        display: none;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        display: none;
     }
 }
 
