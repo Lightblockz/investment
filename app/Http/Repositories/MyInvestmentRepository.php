@@ -4,6 +4,7 @@ namespace App\Http\Repositories;
 
 use App\Transaction;
 use App\MyInvestment;
+use App\InvestmentLog;
 use DB;
 use App\User;
 use App\Wallet;
@@ -20,7 +21,7 @@ class MyInvestmentRepository
 
         return DB::transaction(function() use ($request) {
             
-            return MyInvestment::create([
+            $investment =  MyInvestment::create([
 
                 'user_id' => $request->user_id,
                 'reference_id' => $request->reference_id,
@@ -37,6 +38,22 @@ class MyInvestmentRepository
                 'total_withdrawable_amount' => $request->total_withdrawable_amount,
 
             ]);
+
+             InvestmentLog::create([
+
+                'user_id' => $request->user_id,
+                'investment_id' => $investment->id,
+                'reference_id' => $investment->reference_id,
+                'action' => "Investment created",
+                'description' => "An investment record has been created",
+                'previous_amount' => 0,
+                'current_amount' => $request->amount,
+                'executed_by' => Auth::user()->id,
+
+            ]);
+
+            return $investment;
+            
 
          });
 

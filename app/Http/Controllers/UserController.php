@@ -7,6 +7,7 @@ use App\Http\Repositories\UserRepository;
 use App\Http\Repositories\TransactionRepository;
 use App\Http\Repositories\InvestmentPlanRepository;
 use App\Http\Repositories\MyInvestmentRepository;
+use App\Http\Repositories\InvestmentLogRepository;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -21,13 +22,21 @@ class UserController extends Controller
     private $investment_plan;
     private $transaction;
     private $my_investment;
+    private $investment_log;
 
-    public function __construct (UserRepository $user , InvestmentPlanRepository $investment_plan , TransactionRepository $transaction, MyInvestmentRepository $my_investment)
+    public function __construct (
+                        UserRepository $user , 
+                        InvestmentPlanRepository $investment_plan , 
+                        TransactionRepository $transaction, 
+                        MyInvestmentRepository $my_investment,
+                        InvestmentLogRepository $investment_log
+                    )
     {
         $this->user = $user;
         $this->investment_plan = $investment_plan;
         $this->transaction = $transaction;
         $this->my_investment = $my_investment;
+        $this->investment_log = $investment_log;
     }
 
     public function logout()
@@ -259,7 +268,9 @@ class UserController extends Controller
             "expected_total_interest"=> $expected_total_interest,
             "total_withdrawable_amount"=> $total_withdrawable_amount,
             "interest_paid"=> 0,
+            
         ]);
+
 
         $my_investment = $this->my_investment->create($request);
         

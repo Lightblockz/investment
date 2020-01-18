@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\MyInvestment;
 use App\Wallet;
+use App\Http\Repositories\InvestmentLogRepository;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Console\Command;
@@ -58,6 +59,8 @@ class ProcessTransactionDaily extends Command
             
                 $interest_to_be_paid = ($investment->amount * $investment->interest);
 
+                $previous_amount = $investment->interest_paid;
+
                 $interest_to_be_paid = $investment->interest_paid + $interest_to_be_paid;
 
                 $updateInvestment = MyInvestment::whereId($investment->id)
@@ -72,6 +75,24 @@ class ProcessTransactionDaily extends Command
                 $balance = $wallet->available_balance + $interest_to_be_paid;
 
                 $credit_wallet = $wallet->update(['available_balance' => $balance]);
+
+                $investment_log = new InvestmentLogRepository();
+
+                $data = [
+                    'user_id' => $investment->user_id,
+                    'investment_id' => $investment->id,
+                    'reference_id' => $investment->reference_id,
+                    'action' => "Montly interest paid",
+                    'description' => "A record of the monthly interest payment was created",
+                    'previous_amount' => $investment->interest_paid,
+                    'current_amount' => $interest_to_be_paid,
+                    'executed_by' => "Cron",
+                    'executed_at' => Carbon::now()
+                ];
+
+                $data = (Object)$data;
+
+                $investment_log->create($data);
             }
 
             //Check if investment has gotten to its end date... If yes, Close investment
