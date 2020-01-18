@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Repositories\UserRepository;
+use App\Http\Repositories\TransactionRepository;
+use App\Http\Repositories\InvestmentPlanRepository;
+use App\Http\Repositories\MyInvestmentRepository;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-
+use Carbon\Carbon;
 use App\Mail\VerificationMail;
 use App\Mail\ResetPasswordMail;
 
@@ -15,10 +18,22 @@ class UserController extends Controller
 {
 
     private $user;
+    private $investment_plan;
+    private $transaction;
+    private $my_investment;
 
-    public function __construct (UserRepository $user)
+    public function __construct (UserRepository $user , InvestmentPlanRepository $investment_plan , TransactionRepository $transaction, MyInvestmentRepository $my_investment)
     {
         $this->user = $user;
+        $this->investment_plan = $investment_plan;
+        $this->transaction = $transaction;
+        $this->my_investment = $my_investment;
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/signin');
     }
 
     public function create(Request $request)
@@ -115,7 +130,12 @@ class UserController extends Controller
 
     public function dashboard ()
     {
-        echo Auth::user()->email;
+
+        $user = $this->user->getUserDetails();
+        $plans = $this->investment_plan->all();
+
+        return view('user.dashboard' , ['user' => $user , 'plans' => $plans]);
+
     }
 
     public function resetPassword (Request $request)
@@ -209,4 +229,37 @@ class UserController extends Controller
 
     }
     
+
+    public function invest(Request $request)
+    {
+        
+
+        $start_date = Carbon::now();
+
+        $date = Carbon::now();
+
+        $end_date = $date->addDays($request->duration);
+
+        $transaction = $this->transaction->create($request);
+
+        $expected_monthly_interest = ($request->amount * $request->interest);
+
+        $number_of_months = (integer)($request->duration / 30);
+
+        $expected_total_interest = $expected_monthly_interest * $number_of_months;
+
+        $total_withdrawable_amount = $request->amount + $expected_total_interest;
+
+        $request->merge([
+            "start_date"=> $start_date,
+            "end_date"=> $end_date,
+            "expected_monthly_interest"=> $expected_monthly_interest,
+            "expected_total_interest"=> $expected_total_interest,
+            "total_withdrawable_amount"=> $total_withdrawable_amount,
+            "interest_paid"=> 0,
+        ]);
+
+        $my_investment = $this->my_investment->create($request);
+        
+    }
 }

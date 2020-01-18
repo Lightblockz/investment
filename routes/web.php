@@ -29,6 +29,7 @@ Route::get('user/reset_password', function () {
     return view('reset_password');
 });
 
+Route::get('/logout', 'UserController@logout')->middleware('auth');
 
 Route::group(['prefix' => 'user'], function () {
 
@@ -39,5 +40,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('password/reset/{email}/{token}', 'UserController@setPassword')->name('set.password');
     Route::get('email/verify/{id}/{token}', 'UserController@verifyEmail')->name('verify.email');
     Route::get('/account/dashboard', 'UserController@dashboard')->name('dashboard');
+
+    Route::post('/invest/now', 'UserController@invest')->name('invest');
   
 });

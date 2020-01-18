@@ -17,7 +17,7 @@ class CreateInvestmentPlansTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->integer('amount');
-            $table->integer('interest');
+            $table->double('interest', 3, 2);
             $table->integer('status')->default('1');
             $table->timestamps();
         });

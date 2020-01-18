@@ -2,11 +2,14 @@
 
 namespace App\Http\Repositories;
 
+use App\InvestmentPlan;
 use DB;
 use App\User;
+use App\Wallet;
 use App\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class UserRepository
 {
@@ -55,6 +58,12 @@ class UserRepository
 
            }
 
+           $id = Str::random(8);
+
+           $prefix = substr($request->first_name, 0, 2);
+
+           $wallet_id = strtoupper($prefix ."-" . $id);
+
            $token = substr(md5(time()), 0, 200);
 
            $create = User::create([
@@ -64,8 +73,13 @@ class UserRepository
                'password' => $request->password,
                'token' => $token,
            ]);
+
+           $create_wallet = Wallet::create([
+                'user_id' => $create->id,
+                'wallet_id' => $wallet_id,
+            ]);
            
-           if ($create) {
+           if ($create && $create_wallet) {
                
                 return $create;
 
@@ -154,6 +168,17 @@ class UserRepository
             
          });
 
+    }
+
+    public function getUserDetails()
+    {
+        $user = User::with('wallet')
+                ->with('transactions')
+                ->with('investments')
+                ->find(Auth::user()->id);
+
+        // dd($user);
+        return $user;
     }
 
 }

@@ -43,4 +43,36 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($password);
     }
+
+    /**
+     * Get the wallet record associated with the user.
+     */
+    public function wallet()
+    {
+        return $this->hasOne('App\Wallet');
+    }
+
+    /**
+     * Get the transactions for the user.
+    */
+    public function transactions()
+    {
+        return $this->hasMany('App\Transaction');
+    }
+
+    /**
+     * Get the investments for the user.
+    */
+    public function investments()
+    {
+        return $this->hasMany('App\MyInvestment');
+    }
+
+    /**
+     * Get the user's history.
+     */
+    public function investmentPlan()
+    {
+        return $this->hasOneThrough('App\InvestmentPlan', 'App\MyInvestment');
+    }
 }
