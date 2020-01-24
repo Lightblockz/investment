@@ -15,7 +15,7 @@ class CreateDepositsTable extends Migration
     {
         Schema::create('deposits', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('user_id');
+            $table->string('user_id' , 100);
             $table->bigInteger('amount');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

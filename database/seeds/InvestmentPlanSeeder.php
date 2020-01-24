@@ -15,19 +15,37 @@ class InvestmentPlanSeeder extends Seeder
     {
 
         InvestmentPlan::create([
-            'title' => 'Express',
-            'amount' => 300000,
+            'title' => 'Ivory',
+            'amount' => 150000,
             'interest' => 0.15,
         ]);
 
         InvestmentPlan::create([
-            'title' => 'Diamond',
-            'amount' => 1000000,
+            'title' => 'Serif',
+            'amount' => 300000,
             'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
-            'title' => 'Ivory',
+            'title' => 'Silver',
+            'amount' => 500000,
+            'interest' => 0.05,
+        ]);
+
+        InvestmentPlan::create([
+            'title' => 'Gold',
+            'amount' => 1500000,
+            'interest' => 0.05,
+        ]);
+
+        InvestmentPlan::create([
+            'title' => 'Platinum',
+            'amount' => 3000000,
+            'interest' => 0.05,
+        ]);
+
+        InvestmentPlan::create([
+            'title' => 'Exclusive',
             'amount' => 5000000,
             'interest' => 0.05,
         ]);

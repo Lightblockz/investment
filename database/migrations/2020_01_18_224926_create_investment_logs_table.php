@@ -15,14 +15,14 @@ class CreateInvestmentLogsTable extends Migration
     {
         Schema::create('investment_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id');
-            $table->string('investment_id');
-            $table->string('reference_id');
-            $table->string('action')->nullable();
-            $table->string('description')->nullable();
+            $table->string('user_id' , 100);
+            $table->string('investment_id' , 100);
+            $table->string('reference_id' , 100);
+            $table->string('action' , 100)->nullable();
+            $table->string('description' , 100)->nullable();
             $table->integer('previous_amount')->nullable();
             $table->integer('current_amount')->nullable();
-            $table->string('executed_by')->nullable();
+            $table->string('executed_by' , 100)->nullable();
             $table->dateTime('executed_at')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('investment_id')->references('id')->on('my_investments');

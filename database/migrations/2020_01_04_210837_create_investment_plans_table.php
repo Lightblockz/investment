@@ -15,7 +15,7 @@ class CreateInvestmentPlansTable extends Migration
     {
         Schema::create('investment_plans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->string('title' , 100);
             $table->integer('amount');
             $table->double('interest', 3, 2);
             $table->integer('status')->default('1');

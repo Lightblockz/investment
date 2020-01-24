@@ -15,9 +15,9 @@ class CreateWithdrawalsTable extends Migration
     {
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('user_id');
+            $table->string('user_id' , 100);
             $table->bigInteger('amount')->default(0);
-            $table->string('status')->default('pending');
+            $table->string('status' , 100)->default('pending');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

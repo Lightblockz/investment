@@ -15,10 +15,10 @@ class CreateMyInvestmentsTable extends Migration
     {
         Schema::create('my_investments', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('user_id');
+            $table->string('user_id' , 100);
             $table->bigInteger('investment_plan_id')->unsigned();
-            $table->string('reference_id');
-            $table->string('duration');
+            $table->string('reference_id' , 100);
+            $table->string('duration' , 100);
             $table->bigInteger('amount');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
@@ -28,7 +28,7 @@ class CreateMyInvestmentsTable extends Migration
             $table->bigInteger('interest_paid')->nullable();
             $table->bigInteger('expected_total_interest')->nullable();
             $table->bigInteger('total_withdrawable_amount')->nullable();
-            $table->string('status')->default('Ongoing');
+            $table->string('status' , 100)->default('Ongoing');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('investment_plan_id')->references('id')->on('investment_plans');
             $table->foreign('reference_id')->references('reference_id')->on('transactions');

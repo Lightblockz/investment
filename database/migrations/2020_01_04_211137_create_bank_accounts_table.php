@@ -15,10 +15,10 @@ class CreateBankAccountsTable extends Migration
     {
         Schema::create('bank_accounts', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('user_id');
-            $table->string('bank_name');
-            $table->string('account_name');
-            $table->string('account_number')->unique();
+            $table->string('user_id' , 100);
+            $table->string('bank_name' , 100);
+            $table->string('account_name' , 100);
+            $table->string('account_number' , 100)->unique();
             $table->enum('account_type', ['savings', 'current']);
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

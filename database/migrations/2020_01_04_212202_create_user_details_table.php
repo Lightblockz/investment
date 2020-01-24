@@ -15,12 +15,12 @@ class CreateUserDetailsTable extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('user_id');
-            $table->string('gender')->nullable();
-            $table->string('date_of_birth')->nullable();
-            $table->string('country')->nullable();
-            $table->string('state')->nullable();
-            $table->string('address')->nullable();
+            $table->string('user_id' , 100);
+            $table->string('gender' , 100)->nullable();
+            $table->string('date_of_birth' , 100)->nullable();
+            $table->string('country' , 100)->nullable();
+            $table->string('state' , 100)->nullable();
+            $table->string('address' , 100)->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
