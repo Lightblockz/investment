@@ -15,7 +15,7 @@ class CreateComingTable extends Migration
     {
         Schema::create('coming', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email')->unique();
+            $table->string('email' , 100)->unique();
             $table->timestamps();
         });
     }
