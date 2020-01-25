@@ -47,10 +47,12 @@ class ProcessTransactionDaily extends Command
 
         $last_month = $today->subMonth();
 
-        // dd($last_month);
+        $yesterday = Carbon::yesterday();
+
+        // dd($yesterday);
 
         // Get all investments that qualifies for monthly processing
-        $investments = MyInvestment::where('last_processed_date' , $last_month)->where('status' , 'Ongoing')->get();
+        $investments = MyInvestment::where('last_processed_date' , $yesterday)->where('status' , 'Ongoing')->get();
 
         DB::transaction(function() use ($investments) {
             
