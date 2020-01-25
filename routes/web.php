@@ -14,16 +14,16 @@
 
 
 Route::get('/', function () {
-    return view('signin');
+    return view('coming');
 });
 
 Route::get('/signup', function () {
-    return view('signup');
+    return view('coming');
 })->name('signup');
 
 Route::get('/signin', function () {
-    return view('signin');
-})->name('login');
+    return view('coming');
+})->name('signin');
 
 Route::get('/forgot_password', function () {
     return view('forgot_password');
@@ -32,6 +32,8 @@ Route::get('/forgot_password', function () {
 Route::get('user/reset_password', function () {
     return view('reset_password');
 });
+
+Route::post('/coming', 'UserController@coming')->name('coming');
 
 Route::get('/logout', 'UserController@logout')->middleware('auth');
 

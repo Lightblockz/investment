@@ -275,4 +275,30 @@ class UserController extends Controller
         $my_investment = $this->my_investment->create($request);
         
     }
+
+    public function coming(Request $request)
+    {
+        
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:coming',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+            ->withErrors("We know you already. We have received your email before now.")
+            ->withInput();
+        }
+
+
+        $save = $this->user->coming($request);
+
+            if (!$save) {
+                
+                return back()->withErrors("Sorry! There was an error. Kindly try again");
+
+            }
+
+            return back()->withSuccess("Thank you. We will notify you when we go live");
+
+    }
 }

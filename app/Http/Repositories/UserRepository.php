@@ -182,4 +182,25 @@ class UserRepository
         return $user;
     }
 
+    public function coming($request)
+    {
+        
+        return DB::transaction(function() use ($request) {
+            
+            $user =  DB::table('coming')->insert([
+                'email' => $request->email
+            ]);
+ 
+            if (!$user) {
+                
+                 return false;
+ 
+            }
+
+            return true;
+            
+         });
+
+    }
+    
 }
