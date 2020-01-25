@@ -176,7 +176,7 @@
                                     </ul>
 
                                     <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-primary">Resend Email</button>
+                                        <a href="{{route('signin')}}" class="btn btn-primary">Log in</a>
                                     </div>
 
                                 </div>

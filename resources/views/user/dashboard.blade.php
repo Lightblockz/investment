@@ -170,7 +170,7 @@
 		<!-- end scroll to top btn -->
 	</div>
 	<!-- end page container -->
-
+	<input type="text" hidden name="key" value="{{$p_key}}" id="crsf_token">
 	@include('modal._invest')
 
 @endsection

@@ -36,7 +36,7 @@
 <script src="{{ asset('plugins/DataTables/extensions/Buttons/js/buttons.flash.min.js') }}"></script>
 <script src="{{ asset('plugins/DataTables/extensions/Buttons/js/jszip.min.js') }}"></script>
 <script src="{{ asset('plugins/DataTables/extensions/Buttons/js/pdfmake.min.js') }}"></script>
-<input type="text" hidden name="key" value="{{$p_key}}" id="crsf_token">
+
 <script src="{{ asset('plugins/DataTables/extensions/Buttons/js/vfs_fonts.min.js') }}"></script>
 <script src="{{ asset('plugins/DataTables/extensions/Buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('plugins/DataTables/extensions/Buttons/js/buttons.print.min.js') }}"></script>

@@ -57,7 +57,14 @@ div.dataTables_wrapper div.dataTables_length label {
 }
 
 img.img-responsive.inner-logo.center-block {
-    width: 135px;
+    width: 120px;
+    height: auto;
+    max-height: initial;
+}
+
+a.navbar-brand {
+    padding: 5px 30px !important;
+    /* padding-left: 30px !important; */
 }
 
 .header.navbar-default {

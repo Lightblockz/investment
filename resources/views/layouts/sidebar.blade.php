@@ -40,7 +40,7 @@
       </li>
 
       <li class="has-sub ">
-        <a href="/dashboard">
+        <a href="{{route('bank.account')}}">
           <i class="fa fa-university" aria-hidden="true"></i>
           <span>Bank Account</span>
         </a>

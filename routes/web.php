@@ -49,5 +49,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/account/dashboard', 'UserController@dashboard')->name('dashboard');
 
     Route::post('/invest/now', 'UserController@invest')->name('invest');
+
+    Route::view('/account/bank', 'user.account')->name('bank.account');
   
 });
