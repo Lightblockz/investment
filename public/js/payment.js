@@ -5,27 +5,18 @@ function investNow() {
     var plan = $("#plan_amount :selected").val();
     var plan_duration = $("#plan_duration :selected").val();
     var interest = $("#plan_amount :selected").data("id");
-    var amount = 0;
-
-    
-
-    if (plan == "1") {
-      amount = 300000;
-    } else if (plan == "2") {
-      amount = 1000000;
-    } else if (plan == "3") {
-      amount = 5000000;
-    }
+    var amount = Number($("#plan_amount :selected").text());
 
     var date = (Date.now() / 1000);
     var ran = "LBK" + Math.floor(Math.random() * 10000 + 1);
     var date_string = String(date);
     var res = date_string.substring(4, 7);
     var ref = ran + res;
+    var crsf_token = $("#crsf_token").val();
     
     var handler = PaystackPop.setup({
       
-      key: "pk_test_8d18f652ec39f7839f86277eda11281d04238e78",
+      key: crsf_token,
       email: email,
       amount: amount + "00",
       ref: ref,
@@ -89,4 +80,60 @@ function investNow() {
     handler.openIframe();
   }
 
+
+  $('#document').ready(function () {
+
+    $('#plan_duration').on('change' , function () {
+
+      var amount = Number($("#plan_amount :selected").text());
+      var interest = Number($("#plan_amount :selected").data("id"));
+      var interest_in_percentage = Number($("#plan_amount :selected").data("id")) * 100;
+      var plan_duration = $("#plan_duration :selected").val();
+      var monthly_interest = (amount * interest);
+      var months = Math.round(plan_duration/30);
+      var roi = (monthly_interest * months) + amount;
+
+      $('.capital-val').text("");
+      $('.capital-interest').text("");
+      $('.capital-duration').text("");
+      $('.capital-roi').text("");
+      
+      $('.capital-val').text(`₦${amount}`);
+      $('.capital-interest').text(`${interest_in_percentage}%`);
+      $('.capital-duration').text(`${plan_duration}days`);
+      $('.capital-roi').text(`₦${roi}`);
+      
+      // alert(roi);
+
+    });
+
+
+    
+    $('#plan_amount').on('change' , function () {
+
+      var amount = Number($("#plan_amount :selected").text());
+      var interest = Number($("#plan_amount :selected").data("id"));
+      var interest_in_percentage = Number($("#plan_amount :selected").data("id")) * 100;
+      var plan_duration = Number($("#plan_duration :selected").val());
+      var monthly_interest = (amount * interest);
+      var months = Math.round(plan_duration/30);
+      var roi = (monthly_interest * months) + amount;
+
+      $('.capital-val').text("");
+      $('.capital-interest').text("");
+      $('.capital-duration').text("");
+      $('.capital-roi').text("");
+
+      $('.capital-val').text(`₦${amount}`);
+      $('.capital-interest').text(`${interest_in_percentage}%`);
+      $('.capital-duration').text(`${plan_duration}days`);
+      $('.capital-roi').text(`₦${roi}`);
+      
+      // alert(roi);
+
+    });
+
+    
+
+  });
   

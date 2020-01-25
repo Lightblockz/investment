@@ -47,6 +47,8 @@ class ProcessTransactionDaily extends Command
 
         $last_month = $today->subMonth();
 
+        // dd($last_month);
+
         // Get all investments that qualifies for monthly processing
         $investments = MyInvestment::where('last_processed_date' , $last_month)->where('status' , 'Ongoing')->get();
 

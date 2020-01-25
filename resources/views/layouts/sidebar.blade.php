@@ -27,42 +27,42 @@
 
       <li class="has-sub ">
         <a href="/dashboard">
-          <i class="fa fa-th-large"></i>
+          <i class="fa fa-th-large" aria-hidden="true"></i>
           <span>Dashboard</span>
         </a>
       </li>
 
       <li class="has-sub ">
         <a href="/dashboard">
-          <i class="fa fa-th-large"></i>
+          <i class="icon fa fa-plus"></i>
           <span>Invest</span>
         </a>
       </li>
 
       <li class="has-sub ">
         <a href="/dashboard">
-          <i class="fa fa-th-large"></i>
-          <span>Deposit</span>
+          <i class="fa fa-university" aria-hidden="true"></i>
+          <span>Bank Account</span>
         </a>
       </li>
 
       <li class="has-sub ">
         <a href="/dashboard">
-          <i class="fa fa-th-large"></i>
+          <i class="fa fa-wallet" aria-hidden="true"></i>
           <span>My Wallet</span>
         </a>
       </li>
 
       <li class="has-sub ">
         <a href="/dashboard">
-          <i class="fa fa-th-large"></i>
+          <i class="fa fa-credit-card" aria-hidden="true"></i>
           <span>Transactions</span>
         </a>
       </li>
 
       <li class="has-sub ">
         <a href="/dashboard">
-          <i class="fa fa-th-large"></i>
+          <i class="fa fa-cogs" aria-hidden="true"></i>
           <span>Settings</span>
         </a>
       </li>

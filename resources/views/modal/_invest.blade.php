@@ -32,7 +32,7 @@
                             <label for="" id="feature-label">Choose Investment Plan <small> <a href="">see plans here >></a> </small> </label>
                             <select class="form-control" name="" id="plan_amount">
                                 @foreach ($plans as $plan)
-                                <option data-id={{$plan->interest}} value="{{$plan->id}}">{{$plan->title}} - ₦ {{number_format($plan->amount)}}</option>
+                                <option data-id={{$plan->interest}} value="{{$plan->id}}">{{$plan->amount}}</option>
                                 @endforeach
                             </select>
     
@@ -43,12 +43,30 @@
                         <div class="form-group">
                             <label for="" id="feature-label">Choose Investment Duration </label>
                             <select class="form-control" name="" id="plan_duration">
+                                <option value="92">3 Months</option>
                                 <option value="182">6 Months</option>
                                 <option value="366">12 Months</option>
                             </select>
     
                         </div>
                     </div>
+
+                    <div class="col-md-6">
+                      <h5 class="invest-capital">Capital: <span class="capital-val"></span> </h5>
+                    </div>
+
+                    <div class="col-md-6">
+                      <h5 class="invest-interest">Interest: <span class="capital-interest"></span> </h5>
+                    </div>
+
+                    <div class="col-md-6">
+                      <h5 class="invest-duration">Duration: <span class="capital-duration"></span> </h5>
+                    </div>
+
+                    <div class="col-md-6">
+                      <h5 class="invest-roi">ROI: <span class="capital-roi"></span> </h5>
+                    </div>
+                    
 
                   </div>
 

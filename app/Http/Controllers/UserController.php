@@ -71,7 +71,7 @@ class UserController extends Controller
 
             if ($createUser) {
 
-                Mail::to($createUser->email)->send(new VerificationMail($createUser));
+                // Mail::to($createUser->email)->send(new VerificationMail($createUser));
 
                 return view('success', ['email' => $request->email , 'name' => $request->first_name]);
             }
@@ -144,8 +144,8 @@ class UserController extends Controller
 
         $user = $this->user->getUserDetails();
         $plans = $this->investment_plan->all();
-
-        return view('user.dashboard' , ['user' => $user , 'plans' => $plans]);
+        $p_key = env('p_key');
+        return view('user.dashboard' , ['user' => $user , 'plans' => $plans , 'p_key' => $p_key]);
 
     }
 

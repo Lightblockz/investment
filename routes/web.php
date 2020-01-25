@@ -15,14 +15,15 @@
 
 Route::get('/', function () {
     return view('coming');
-});
+})->name('login');
+
 
 Route::get('/signup', function () {
-    return view('coming');
+    return view('signup');
 })->name('signup');
 
 Route::get('/signin', function () {
-    return view('coming');
+    return view('signin');
 })->name('signin');
 
 Route::get('/forgot_password', function () {
