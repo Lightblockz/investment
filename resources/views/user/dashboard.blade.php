@@ -75,7 +75,7 @@
 						<div class="stats-icon stats-icon-lg"><i class="fa fa-globe fa-fw"></i></div>
 						<div class="stats-content">
 							<div class="stats-title">TOTAL WITHDRAWAL</div>
-							<div class="stats-number">38,900</div>
+							<div class="stats-number">₦ 0</div>
 							<div class="stats-progress progress">
 								<div class="progress-bar" style="width: 76.3%;"></div>
 							</div>

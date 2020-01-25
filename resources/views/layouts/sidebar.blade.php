@@ -26,7 +26,7 @@
       <li class="nav-header">Menu</li>
 
       <li class="has-sub ">
-        <a href="/dashboard">
+        <a href="{{route('dashboard')}}">
           <i class="fa fa-th-large" aria-hidden="true"></i>
           <span>Dashboard</span>
         </a>
