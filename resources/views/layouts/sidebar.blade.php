@@ -33,7 +33,7 @@
       </li>
 
       <li class="has-sub ">
-        <a href="/dashboard">
+        <a href="" data-toggle="modal" data-target="#invest-modal">
           <i class="icon fa fa-plus"></i>
           <span>Invest</span>
         </a>
