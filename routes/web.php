@@ -53,3 +53,11 @@ Route::group(['prefix' => 'user'], function () {
     Route::view('/account/bank', 'user.account')->name('bank.account');
   
 });
+
+
+
+Route::get('command/process/transaction', function () {
+	
+    \Artisan::call('process:transaction');
+    dd("Done");
+});
