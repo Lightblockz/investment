@@ -130,6 +130,12 @@
                     width: 200px;
                     margin-bottom: 20px;
                 }
+                .flex-center {
+                    align-items: center;
+                    display: block !important;
+                    justify-content: center;
+                    padding: 60px 15px;
+                }
             }
         </style>
     </head>
