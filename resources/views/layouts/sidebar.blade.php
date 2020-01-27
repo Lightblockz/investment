@@ -1,5 +1,10 @@
 <!-- begin #sidebar -->
 <div id="sidebar" class="sidebar">
+
+  <a>
+    <img src="{{ asset('img/lightblockswhite.png') }}" class="img-responsive inner-logo center-block" id="sidebar-logo" alt="">
+  </a>
+
   <!-- begin sidebar scrollbar -->
   <div data-scrollbar="true" data-height="100%">
     <!-- begin sidebar user -->

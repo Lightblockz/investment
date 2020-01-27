@@ -125,6 +125,8 @@
                 font-size: 11px;
             }
 
+            
+
             @media (max-width:768px) {
                 img.img-responsive.outer-logo.center-block {
                     width: 200px;
