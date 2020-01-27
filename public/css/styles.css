@@ -296,6 +296,12 @@ scp ubuntu@3.20.44.152:/var/www/research-frontend/public/consents  C:\Users\Chid
 
     .sidebar-bg {
         display: none;
+        z-index: 10000;
+    }
+
+    .sidebar, .sidebar-bg {
+        z-index: 10000;
+        height: 150vh !important;
     }
 
     .navbar-header {
