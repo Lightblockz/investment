@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Mail\VerificationMail;
 use App\Mail\ResetPasswordMail;
+use UxWeb\SweetAlert\SweetAlert;
 
 class UserController extends Controller
 {
@@ -344,11 +345,14 @@ class UserController extends Controller
 
             if (!$add_account) {
                 
-                return back()->withErrors("Sorry! There was an error. Please try again.");
+                SweetAlert::error("Sorry! There was an error. Please try again."  , "");
+                return back();
 
             }
 
-            return back()->withSuccess("Bank Account details has been added.");
+            SweetAlert::success("Bank Account details has been added."  , "");
+
+            return back();
 
 
 
@@ -363,12 +367,16 @@ class UserController extends Controller
         $delete = $this->bank_account->delete($id);
 
         if (!$delete) {
+
+            SweetAlert::error("Sorry! There was an error. Please try again.", 'Optional Title');
                 
-            return back()->withErrors("Sorry! There was an error. Please try again.");
+            return back();
 
         }
 
-        return back()->withSuccess("Bank Account deleted successfully.");
+        SweetAlert::success("Bank Account deleted successfully.", "Bank Account deleted successfully.");
+
+        return back();
 
     }
 

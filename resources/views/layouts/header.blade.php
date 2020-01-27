@@ -53,6 +53,8 @@
 	<link href="{{ asset('plugins/nvd3/build/nv.d3.css') }}" rel="stylesheet" />
 	<!-- ================== END PAGE LEVEL CSS STYLE ================== -->
 
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 	<link href="{{ asset('plugins/nvd3/build/nv.d3.css') }}" rel="stylesheet" />
 
 	<link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="theme" />
@@ -60,3 +62,4 @@
 </head>
 
 <body>
+	@include('sweet::alert')
