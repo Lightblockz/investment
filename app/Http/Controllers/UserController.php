@@ -358,4 +358,18 @@ class UserController extends Controller
 
     }
 
+    public function deleteBankAccount($id)
+    {
+        $delete = $this->bank_account->delete($id);
+
+        if (!$delete) {
+                
+            return back()->withErrors("Sorry! There was an error. Please try again.");
+
+        }
+
+        return back()->withSuccess("Bank Account deleted successfully.");
+
+    }
+
 }

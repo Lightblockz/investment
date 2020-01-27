@@ -53,6 +53,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/account/bank', 'UserController@bankAccount')->name('bank.account');
   
     Route::post('/account/bank/save', 'UserController@saveBankAccount')->name('save.bank.account');
+    Route::get('/bank/account/delete/{id}', 'UserController@deleteBankAccount')->name('delete.bank.account');
 });
 
 

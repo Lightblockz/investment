@@ -36,4 +36,23 @@ class BankAccountRepository
 
     }
 
+    public function delete($id)
+    {
+
+        return DB::transaction(function() use ($id) {
+            
+            $account =  BankAccount::where('id' , $id)->delete();
+
+            if ($account) {
+               
+                return $account;
+
+            }
+
+            return false;
+            
+         });
+
+    }
+
 }
