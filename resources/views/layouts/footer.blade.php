@@ -57,11 +57,16 @@
     App.init();
     DashboardV2.init();
     TableManageCombine.init();
+
+    $('#sidebar').hide();
+
   });
 
   $('.navbar-toggle').on('click' , function(){
     $('#sidebar').animate({width:'toggle'},350);
   });
+
+
 
 </script>
 
