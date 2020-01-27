@@ -58,6 +58,11 @@
     DashboardV2.init();
     TableManageCombine.init();
   });
+
+  $('.navbar-toggle').on('click' , function(){
+    $('#sidebar').animate({width:'toggle'},350);
+  });
+
 </script>
 
 
