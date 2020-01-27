@@ -8,6 +8,7 @@ use App\Http\Repositories\TransactionRepository;
 use App\Http\Repositories\InvestmentPlanRepository;
 use App\Http\Repositories\MyInvestmentRepository;
 use App\Http\Repositories\InvestmentLogRepository;
+use App\Http\Repositories\BankAccountRepository;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -23,13 +24,15 @@ class UserController extends Controller
     private $transaction;
     private $my_investment;
     private $investment_log;
+    private $bank_account;
 
     public function __construct (
                         UserRepository $user , 
                         InvestmentPlanRepository $investment_plan , 
                         TransactionRepository $transaction, 
                         MyInvestmentRepository $my_investment,
-                        InvestmentLogRepository $investment_log
+                        InvestmentLogRepository $investment_log,
+                        BankAccountRepository $bank_account
                     )
     {
         $this->user = $user;
@@ -37,6 +40,8 @@ class UserController extends Controller
         $this->transaction = $transaction;
         $this->my_investment = $my_investment;
         $this->investment_log = $investment_log;
+        $this->bank_account = $bank_account;
+        
     }
 
     public function logout()
@@ -71,7 +76,7 @@ class UserController extends Controller
 
             if ($createUser) {
 
-                // Mail::to($createUser->email)->send(new VerificationMail($createUser));
+                Mail::to($createUser->email)->send(new VerificationMail($createUser));
 
                 return view('success', ['email' => $request->email , 'name' => $request->first_name]);
             }
@@ -143,9 +148,22 @@ class UserController extends Controller
     {
 
         $user = $this->user->getUserDetails();
+        // dd($user);
         $plans = $this->investment_plan->all();
         $p_key = env('p_key');
+
+        
         return view('user.dashboard' , ['user' => $user , 'plans' => $plans , 'p_key' => $p_key]);
+
+    }
+
+    public function BankAccount ()
+    {
+
+        $user = $this->user->getBankAccount();
+        // dd($user);
+        
+        return view('user.account' , ['user' => $user]);
 
     }
 
@@ -301,4 +319,43 @@ class UserController extends Controller
             return back()->withSuccess("Thank you. We will notify you when we go live");
 
     }
+    
+
+    public function saveBankAccount(Request $request)
+    {
+        
+        try {
+
+            $validator = Validator::make($request->all(), [
+                'bank_name' => 'required',
+                'account_name' => 'required',
+                'account_number' => 'required',
+                'account_type' => 'required',
+
+            ]);
+
+            if ($validator->fails()) {
+                return back()
+                ->withErrors($validator)
+                ->withInput();
+            }
+
+            $add_account = $this->bank_account->create($request);
+
+            if (!$add_account) {
+                
+                return back()->withErrors("Sorry! There was an error. Please try again.");
+
+            }
+
+            return back()->withSuccess("Bank Account details has been added.");
+
+
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+    }
+
 }

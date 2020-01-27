@@ -50,8 +50,9 @@ Route::group(['prefix' => 'user'], function () {
 
     Route::post('/invest/now', 'UserController@invest')->name('invest');
 
-    Route::view('/account/bank', 'user.account')->name('bank.account');
+    Route::get('/account/bank', 'UserController@bankAccount')->name('bank.account');
   
+    Route::post('/account/bank/save', 'UserController@saveBankAccount')->name('save.bank.account');
 });
 
 

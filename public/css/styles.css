@@ -11,6 +11,34 @@
     padding-left: 100%;
 }
 
+.account-card {
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.15);
+    background-color: #1c2835;
+    padding: 30px;
+    border-radius: 5px;
+    columns: #fff;
+}
+
+ .account-card h4 , .account-card h5 {
+    color: #fff;
+}
+
+.account-card label {
+    color: #bebdc2 !important;
+}
+
+.table-responsive.bank-account-table {
+    margin-top: 40px;
+}
+
+a.btn.btn-primary.btn-block.add-acount {
+    margin: 20px 0px;
+    background: #fe8800;
+    border: 1px solid #fe8800;
+    padding: 10px;
+    font-size: 14px;
+}
+
 .header .navbar-brand img, .sidebar .nav>li.nav-profile .image img, .sidebar .nav>li>a .icon-img img {
     max-width: 100%;
     max-height: auto !important;

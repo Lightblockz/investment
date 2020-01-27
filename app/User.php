@@ -57,6 +57,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the bank account associated with the user.
+     */
+    public function bankAccount()
+    {
+        return $this->hasMany('App\BankAccount');
+    }
+
+    /**
      * Get the transactions for the user.
     */
     public function transactions()

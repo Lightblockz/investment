@@ -10,6 +10,72 @@
 
             <div class="row">
 
+				@if ($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
+
+				<div class="offset-md-3 col-md-6">
+
+					<div class="row">
+
+						<div class="col-md-12">
+
+							<div class="form-group">
+								<a href="" data-toggle="modal" data-target="#bank-account-modal" class="btn btn-primary btn-block add-acount">Add Bank Account</a>
+							</div>
+
+						</div>
+
+					</div>
+					
+				</div>
+
+				
+				<div class="table-responsive bank-account-table">
+
+					<table id="data-table-combine" class="table table-bordered myinvestment-table">
+						<thead>
+							<tr>
+								{{-- <th width="1%"></th> --}}
+								<th class="text-nowrap">S/No</th>
+								<th class="text-nowrap">Bank Name</th>
+								<th class="text-nowrap">Account Name</th>
+								<th class="text-nowrap">Account Number</th>
+								<th class="text-nowrap">Account Type</th>
+								<th class="text-nowrap">Action</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							@php
+								$i = 1; 
+							@endphp
+
+							@foreach($user->bankAccount as $bankAccount)
+								
+							<tr class="odd gradeX">
+								<td width="1%" class="f-s-600 text-inverse">{{ $i }}</td>	
+								<td>{{ $bankAccount->bank_name }}</td>
+								<td>{{ $bankAccount->account_name }}</td>
+								<td>{{ $bankAccount->account_number }}</td>
+								<td>{{ $bankAccount->account_type }}</td>
+								<td>Delete</td>
+							</tr>
+
+							@endforeach
+							
+
+
+						</tbody>
+					</table>
+
+				</div>
 
 
             </div>
@@ -25,4 +91,5 @@
 	</div>
 	<!-- end page container -->
 
+	@include('modal._addacount')
 @endsection

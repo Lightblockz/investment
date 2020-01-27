@@ -6,6 +6,7 @@ use App\InvestmentPlan;
 use DB;
 use App\User;
 use App\Wallet;
+use App\BankAccount;
 use App\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -176,9 +177,19 @@ class UserRepository
         $user = User::with('wallet')
                 ->with('transactions')
                 ->with('investments')
+                ->with('bankAccount')
                 ->find(Auth::user()->id);
 
         // dd($user);
+        return $user;
+    }
+
+    public function getBankAccount()
+    {
+
+        $user = User::with('bankAccount')
+                ->find(Auth::user()->id);
+
         return $user;
     }
 
