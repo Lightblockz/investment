@@ -178,6 +178,7 @@ class UserRepository
                 ->with('transactions')
                 ->with('investments')
                 ->with('bankAccount')
+                ->with('bankTransfer')
                 ->find(Auth::user()->id);
 
         // dd($user);

@@ -14,7 +14,7 @@
 
 
 Route::get('/', function () {
-    return view('coming');
+    return view('signin');
 })->name('login');
 
 
@@ -49,11 +49,47 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/account/dashboard', 'UserController@dashboard')->name('dashboard');
 
     Route::post('/invest/now', 'UserController@invest')->name('invest');
+    Route::post('/invest/via/bank/save', 'UserController@investViaBank')->name('investbank');
+    Route::get('/invest/via/bank', 'UserController@investViaBankView')->name('invest.bank.view');
 
     Route::get('/account/bank', 'UserController@bankAccount')->name('bank.account');
   
     Route::post('/account/bank/save', 'UserController@saveBankAccount')->name('save.bank.account');
     Route::get('/bank/account/delete/{id}', 'UserController@deleteBankAccount')->name('delete.bank.account');
+
+
+    Route::group(['prefix' => 'transactions'], function () {
+
+        Route::get('all', 'UserController@all')->name('all.transaction');
+        
+    });
+
+    Route::group(['prefix' => 'settings'], function () {
+
+        Route::post('all', 'UserController@settings')->name('settings');
+        
+    });
+
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::get('account/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+
+    Route::group(['prefix' => 'transactions'], function () {
+
+        Route::post('transfer/decline', 'AdminController@declineTransfer')->name('decline.transfer');
+        Route::post('transfer/approve', 'UserController@approveTransfer')->name('approve.transfer');
+        
+    });
+
+    Route::group(['prefix' => 'settings'], function () {
+
+        
+        
+    });
+
 });
 
 

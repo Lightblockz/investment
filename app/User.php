@@ -65,6 +65,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the bank transfers account associated with the user.
+     */
+    public function bankTransfer()
+    {
+        return $this->hasMany('App\BankTransfer')->where('verified' , 0);
+    }
+
+    /**
      * Get the transactions for the user.
     */
     public function transactions()

@@ -1,0 +1,505 @@
+img.img-responsive.success-gif {
+    width: 129px;
+    align-items: center;
+}
+
+.success-p-pay {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+p.success-p-pay-signup {
+    color: #fff !important;
+    background: darkcyan !important;
+    padding: 20px !important;
+}
+
+.error-payment-h5 {
+    color: red;
+    font-size: 20px;
+}
+
+.h4-unconfirmed {
+    color: #ECB81F;
+    margin-bottom: 15px;
+}
+
+.alert.alert-danger-payment {
+    background: #000000d4;
+}
+
+.error-payment {
+    font-size: 15px;
+    color: #d83c3cb8;
+}
+
+.btn.btn-primary.pay-go-dashboard {
+    border: 1px solid #ecb82e;
+    background: #ecb82e;
+    color: #1c2835;
+}
+
+.panelStudies {
+    display: flex;
+    align-items: center;
+}
+
+ul.paybank-ul {
+    list-style-type: decimal;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.paybank-div h5 {
+    color: #fff;
+    line-height: 25px;
+    font-weight: 400;
+
+}
+
+button.btn.btn-primary.pull-right.btn-complete {
+    background: #ecb82e;
+    border: 1px solid #ecb82e;
+    color: #1c2835;
+}
+
+.paybank-ul li {
+    margin: 15px 0px;
+    line-height: 25px;
+}
+
+span.bank-span-inner {
+    color: #ecb82e;
+}
+
+.btn.btn-primary.btn-block.upload-button {
+    background: #ecb82e;
+    border: 1px solid #ecb82e;
+    padding: 10px;
+    color: #1c2835;
+    margin-top: 10px;
+}
+
+span.bank-span {
+    color: #fff;
+    font-size: 16px;
+}
+
+.myinvestment-table {
+    color : #fff !important;
+}
+
+.studyView {
+    padding-left: 100%;
+}
+
+#submit-via-bank {
+    font-size: 16px;
+    padding: 11px;
+    background: #f5be2e;
+    border: 1px solid #ecb72b;
+    color: #1c2835;
+}
+
+.account-card {
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.15);
+    background-color: #1c2835;
+    padding: 30px;
+    border-radius: 5px;
+    columns: #fff;
+}
+
+.header.navbar-default .navbar-toggle .icon-bar {
+    background: #fe8800;
+}
+
+ .account-card h4 , .account-card h5 {
+    color: #fff;
+}
+
+.account-card label {
+    color: #bebdc2 !important;
+}
+
+.table-responsive.bank-account-table {
+    margin-top: 40px;
+}
+
+a.btn.btn-primary.btn-block.add-acount {
+    margin: 20px 0px;
+    background: #fe8800;
+    border: 1px solid #fe8800;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.header .navbar-brand img, .sidebar .nav>li.nav-profile .image img, .sidebar .nav>li>a .icon-img img {
+    max-width: 100%;
+    max-height: auto !important;
+    height: auto;
+}
+
+body {
+    scroll-behavior: auto;
+    background: #1c2835;
+    color: #d6d6d6 !important;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+
+    color: #bebdc2;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background: #1c2835!important;
+    border-color: #a4a9ae!important;
+    color: #fff;
+}
+
+.table.table-bordered>thead:first-child>tr:first-child>td, .table.table-bordered>thead:first-child>tr:first-child>th {
+    border-top: 1px solid #c3c5c7b8;
+    color: #c3c5c7 !important;
+}
+
+.header.navbar-default .navbar-nav>li .dropdown-toggle, .header.navbar-default .navbar-nav>li>a {
+    color: #ecb82e;
+    font-size: 16px;
+    padding-right: 20px;
+}
+
+.sidebar, .sidebar-bg {
+    background: #1a242f;
+    width: 220px;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    border-right: 1px solid #34485f69;
+}
+
+.sidebar {
+
+    display: block !important;
+
+}
+
+.sidebar-bg {
+   
+    display: block !important;
+   
+}
+
+img.img-responsive.inner-logo.center-block {
+    width: 120px;
+    height: auto;
+    max-height: initial;
+}
+
+a.navbar-brand {
+    padding: 5px 30px !important;
+    /* padding-left: 30px !important; */
+}
+
+.header.navbar-default {
+    background: #1a242f;
+    padding: 5px;
+    border-bottom: 1px solid #34485f69;
+}
+
+img#sidebar-logo {
+    display : none;
+    width: 150px;
+    margin-left: 30px;
+}
+
+a.btn.btn-primary.btn-block.fundwallet {
+    background: #59c7c7;
+    border: 1px solid #59c7c7;
+}
+
+.sidebar .nav>li {
+    position: relative;
+    font-size: 15px;
+    /* color: #d6d6d6 !important; */
+    color: #c3c5c7 !important;
+    margin: 5px;
+    font-weight: 600;
+}
+
+a.btn.btn-primary.btn-block.withdraw {
+    background: transparent;
+    border: 1px solid #44dada;
+}
+
+a.btn.btn-primary.btn-block.invest {
+    background: #c34d6c;
+    border: 1px solid #c14f6d;
+}
+
+#invest-modal{
+    font-size: 16px;;
+}
+
+button#submit-review {
+    font-size: 15px;
+    padding: 11px;
+    background: #1c2835;
+    border: 1px solid #1e2a38;
+}
+
+label.form-check-label {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.form-check-input {
+    margin-top: 0px !important;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+select#plan_amount {
+    font-size: 14px;
+    height: 40px;
+    font-weight: 500;
+}
+
+.modal-header {
+    padding: 12px 15px;
+    border-bottom-color: #1c2835;
+    background: #1c2835;
+}
+
+.modal-title.text-center {
+    color: #f5be2e;
+    text-align: center;
+    font-weight: 900;
+}
+
+.sidebar .nav>li>a {
+    padding: 7px 20px;
+    line-height: 20px;
+    color: #c3c5c7;
+    display: block;
+    text-decoration: none;
+}
+
+.widget.widget-stats {
+    position: relative;
+    color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    max-height: 140px;
+    min-height: 140px;
+    height: 140px;
+}
+
+.stats-title {
+    font-size: 16px !important;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.bg-gradient-blue {
+    background: -moz-linear-gradient(-45deg,rgba(81,136,218,1) 0,rgba(52,135,226,1) 100%)!important;
+    background: -webkit-linear-gradient(-45deg,rgba(81,136,218,1) 0,rgba(52,135,226,1) 100%)!important;
+    background: linear-gradient(135deg,#a23b57 0,#a0858c 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5188da', endColorstr='#3487e2', GradientType=1 )!important;
+}
+
+.sidebar .nav>li.nav-profile .cover.with-shadow:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all .2s linear;
+    background: #1a242f;
+}
+
+.panelView {
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.panelgreen{
+    background-color: #78B95C !important;
+}
+
+.header.navbar-default .brand, .header.navbar-default .navbar-brand {
+    color: #f5be2e;
+    font-size: 25px;
+    /* padding: 0px; */
+}
+
+.leftPanel{
+    text-align: left;
+    vertical-align: center;
+    justify-content: center;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.widget-stats .stats-desc, .widget-stats .stats-title {
+    color: #f5be2e;
+    margin-bottom: 10px;
+}
+
+
+.bottomSpace {
+    margin-bottom: 20px !important;
+}
+
+.bottomSpacelg {
+    margin-bottom: 80px !important;
+}
+
+scp ubuntu@3.20.44.152:/var/www/research-frontend/public/consents  C:\Users\Chidi Nkwocha\Desktop\Consent
+
+.topSpace {
+    margin-top: 20px !important;
+}
+
+.lastresponse{
+    float:right;
+    color:#E0E0E0
+}
+
+.responsetext{
+    margin-left: 5px
+}
+
+
+.PaddingRT {
+    padding: 20px 40px !important
+}
+
+.questionpadding {
+    padding: 40px 80px !important
+}
+
+
+
+@media (max-width:768px){
+    .questionpadding {
+        padding: 40px 40px !important
+    }
+
+    /* .sidebar-bg {
+        display: inherit !important;
+        z-index: 10000;
+    }
+
+    .sidebar, .sidebar-bg {
+        z-index: 10000;
+        height: 150vh !important;
+        display: inherit !important;
+        
+    } */
+
+    .sidebar{
+      
+        display: block !important;
+        z-index: 10000;
+
+    }
+
+    .sidebar-bg {
+      
+        display: none !important;
+
+    }
+
+    img#sidebar-logo {
+        display : block;
+        width: 150px;
+        margin-left: 30px;
+    }
+
+    #sidebar {
+        display: inherit;
+    }
+
+    .content {
+        padding: 50px 30px;
+    }
+
+    .widget.widget-stats.bg-gradient-purple {
+        display: none;
+    }
+
+    .navbar-header {
+        border-bottom: none;
+        border-bottom: 1px solid #714c222e;
+        padding: 5px 10px;s
+    }
+
+    a.navbar-brand {
+        padding: 7px 10px!important;
+    }
+
+    .header.navbar-default {
+        padding: 0px;
+    }
+
+    .page-header-fixed {
+        padding-top: 0px;
+    }
+
+    .dt-buttons.btn-group {
+        display: none;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        display: none;
+    }
+}
+
+.increasePadding {
+    padding: 0px 40px !important
+}
+
+.whitepanel{
+    box-shadow: 0 0 13px 0 rgba(82,63,105,.05) !important;
+    background-color: #fff !important;
+}
+
+.borderline{
+    border-right: 1px solid #dfdfdf;
+}
+
+.borderBottom{
+    padding-bottom:20px;
+    border-bottom: 0.2px solid #dfdfdf;
+}
+
+.logocontainer{
+    display: inline-block !important;
+    margin: 0px 20px;
+}
+
+.checkboxinline{
+    display: inline-flex;
+}
+
+.table_wrapper{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.stats-title.wallet-title {
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+

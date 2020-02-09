@@ -59,6 +59,7 @@
 
 	<link href="{{ asset('css/styles.css') }}" rel="stylesheet" id="theme" />
 
+	<link href="{{ asset('css/main.css') }}" rel="stylesheet" id="theme" />
 </head>
 
 <body>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>LightBlocks</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700i&display=swap" rel="stylesheet">
@@ -19,6 +19,12 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+            }
+
+            p.success-p-pay-signup {
+                color: #fff !important;
+                background: darkcyan !important;
+                padding: 20px !important;
             }
 
             .signup-iblock.text-center {
@@ -151,6 +157,16 @@
                     <div class="container">
                         
                         <div class="row">
+
+                            @if(session('success'))
+
+                                <div class="col-md-offset-4 col-md-4 text-center">
+   
+                                    <p class="success-p-pay-signup">{{session('success')}}</p>
+
+                                </div>  
+
+                            @endif
 
                             <div class="col-md-offset-4 col-md-4">
                                 <div class="logo-group">

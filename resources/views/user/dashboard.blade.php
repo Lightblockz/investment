@@ -107,6 +107,8 @@
 
 				<div class="panel-body col-md-12">
 
+					<h4 class="h4-unconfirmed">My Investments</h4>
+
 					<div class="table-responsive">
 
 						<table id="data-table-combine" class="table table-bordered myinvestment-table">
@@ -147,6 +149,55 @@
 										<td>{{ $investment->status }}</td>
 									</tr>
 	
+								@endforeach
+	
+	
+							</tbody>
+						</table>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				<div class="panel-body col-md-12">
+
+					<h4 class="h4-unconfirmed">Unconfirmed Bank Transfer</h4>
+
+					<div class="table-responsive">
+
+						<table id="data-table-combine" class="table table-bordered myinvestment-table">
+							<thead>
+								<tr>
+									<th width="1%" style="color:#c3c5c7 !important"></th>
+									<th class="text-nowrap">Reference ID</th>
+									<th class="text-nowrap">Amount (₦)</th>
+									<th class="text-nowrap">Date</th>
+									<th class="text-nowrap">Status</th>	
+									
+								</tr>
+							</thead>
+							<tbody>
+								@php
+									$i = 1; 
+								@endphp
+	
+								@foreach($user->bankTransfer as $pending_transfer)
+	
+									<tr class="odd gradeX">
+										<td width="1%" class="f-s-600 text-inverse" style="color:white !important">{{ $i }}</td>	
+										<td>{{ $pending_transfer->reference_id }}</td>
+										<td>{{ number_format($pending_transfer->amount) }}</td>
+										<td>{{ $pending_transfer->created_at }}</td>
+										<td style="color:#ECB81F">Pending</td>
+									</tr>
+								@php
+									$i++; 
+								@endphp
 								@endforeach
 	
 	

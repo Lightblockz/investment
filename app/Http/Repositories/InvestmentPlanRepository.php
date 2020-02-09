@@ -19,4 +19,9 @@ class InvestmentPlanRepository
         return InvestmentPlan::all();
     }
 
+    public function getInvestmentPlan($id)
+    {
+        return InvestmentPlan::findOrFail($id);
+    }
+
 }

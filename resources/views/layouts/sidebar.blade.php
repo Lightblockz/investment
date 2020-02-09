@@ -52,21 +52,21 @@
       </li>
 
       <li class="has-sub ">
-        <a href="/dashboard">
+        <a href="{{route('dashboard')}}">
           <i class="fa fa-wallet" aria-hidden="true"></i>
           <span>My Wallet</span>
         </a>
       </li>
 
       <li class="has-sub ">
-        <a href="/dashboard">
+        <a href="{{route('all.transaction')}}">
           <i class="fa fa-credit-card" aria-hidden="true"></i>
           <span>Transactions</span>
         </a>
       </li>
 
       <li class="has-sub ">
-        <a href="/dashboard">
+        <a href="{{route('settings')}}">
           <i class="fa fa-cogs" aria-hidden="true"></i>
           <span>Settings</span>
         </a>

@@ -52,7 +52,7 @@ class ProcessTransactionDaily extends Command
         // dd($yesterday);
 
         // Get all investments that qualifies for monthly processing
-        $investments = MyInvestment::where('last_processed_date' , $yesterday)->where('status' , 'Ongoing')->get();
+        $investments = MyInvestment::where('last_processed_date' , $last_month)->where('status' , 'Ongoing')->get();
 
         DB::transaction(function() use ($investments) {
             
@@ -86,7 +86,7 @@ class ProcessTransactionDaily extends Command
                     'user_id' => $investment->user_id,
                     'investment_id' => $investment->id,
                     'reference_id' => $investment->reference_id,
-                    'action' => "Montly interest paid",
+                    'action' => "Monthly interest paid",
                     'description' => "A record of the monthly interest payment was created",
                     'previous_amount' => $investment->interest_paid,
                     'current_amount' => $interest_to_be_paid,

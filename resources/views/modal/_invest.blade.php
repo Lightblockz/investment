@@ -13,8 +13,8 @@
 
             </div>
 
-           <form class="form" id="reviewform">
-
+            <form class="form" action="{{route('invest.bank.view')}}" method="get" id="reviewform">
+              @csrf
              @if (Auth::user())
              <div class="modal-body">
 
@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="" id="feature-label">Choose Investment Plan <small> <a href="">see plans here >></a> </small> </label>
-                            <select class="form-control" name="" id="plan_amount">
+                            <select class="form-control" name="plan_amount" id="plan_amount">
                                 @foreach ($plans as $plan)
                                 <option data-id={{$plan->interest}} value="{{$plan->id}}">{{$plan->amount}}</option>
                                 @endforeach
@@ -42,7 +42,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="" id="feature-label">Choose Investment Duration </label>
-                            <select class="form-control" name="" id="plan_duration">
+                            <select class="form-control" name="plan_duration" id="plan_duration">
                                 <option value="92">3 Months</option>
                                 <option value="182">6 Months</option>
                                 <option value="366">12 Months</option>
@@ -75,7 +75,10 @@
                   </div>
 
                   <script src="https://js.paystack.co/v1/inline.js"></script>
-                  <button type="button" onclick="investNow()" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-review" style="font-weight:600;">Submit</button>
+                  {{-- <button type="button" onclick="investNowViaTransfer()" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-via-bank" style="font-weight:600;">Pay Via Bank Transfer</button> --}}
+                  <button type="submit" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-via-bank" style="font-weight:600;">Pay Via Bank Transfer</a>
+
+                  <button type="button" onclick="investNow()" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-review" style="font-weight:600;">Pay Online</button>
 
              </div>
 
