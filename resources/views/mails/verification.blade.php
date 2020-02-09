@@ -575,7 +575,7 @@ width: 25%!important
 																							<h2 style="margin:0;font-size:22px;line-height:17px;text-align:center">Verify your email address</h2>
 																						</div>
 																						
-																						<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;background:#0d3e65" cellpadding="0" cellspacing="0" width="100%">
+																						<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;background:#002060" cellpadding="0" cellspacing="0" width="100%">
 																							<tbody>
 																								<tr style="vertical-align:top">
 																									<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:40px;padding-right:10px;padding-bottom:0px;padding-left:10px">
