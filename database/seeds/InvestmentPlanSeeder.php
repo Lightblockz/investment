@@ -14,11 +14,11 @@ class InvestmentPlanSeeder extends Seeder
     public function run()
     {
 
-        // InvestmentPlan::create([
-        //     'title' => 'Ivory',
-        //     'amount' => 150000,
-        //     'interest' => 0.10,
-        // ]);
+        InvestmentPlan::create([
+            'title' => 'Ivory',
+            'amount' => 150000,
+            'interest' => 0.10,
+        ]);
 
         InvestmentPlan::create([
             'title' => 'Serif',

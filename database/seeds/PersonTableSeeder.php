@@ -15,10 +15,10 @@ class PersonTableSeeder extends Seeder
     
         //
         $user = User::create([
-            'first_name' => 'Chidi',
-            'last_name' => 'Nkwocha',
-            'email' => 'profchydon@gmail.com',
-            'password' => '*Shakers6559#',
+            'first_name' => 'Hello',
+            'last_name' => 'Lightblocks',
+            'email' => 'hello@lightblocks.biz',
+            'password' => 'lightblocks',
             'person' => 1,
             'phone' => '',
         ]);
