@@ -59,14 +59,14 @@
       </li>
 
       <li class="has-sub ">
-        <a href="{{route('all.transaction')}}">
+        <a href="">
           <i class="fa fa-credit-card" aria-hidden="true"></i>
           <span>Transactions</span>
         </a>
       </li>
 
       <li class="has-sub ">
-        <a href="{{route('settings')}}">
+        <a href="">
           <i class="fa fa-cogs" aria-hidden="true"></i>
           <span>Settings</span>
         </a>
