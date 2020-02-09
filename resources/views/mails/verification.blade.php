@@ -403,7 +403,7 @@
 				font-size: 16px !important;
 			}
 			.clean-body{
-				padding: 20px !important;
+				padding: 0px !important;
 				text-align: center !important;
 			}
 			.white-banner {
@@ -431,7 +431,7 @@
 		}
 	</style>
 </head>
-<body class="clean-body" style="margin: 0; padding: 70px 30px; -webkit-text-size-adjust: 100%; background-color: #fbfdff;">
+<body class="clean-body" style="margin: 0; background-color: #fbfdff;">
 <style id="media-query-bodytag" type="text/css">
 @media (max-width: 920px) {
 .block-grid {
@@ -478,177 +478,233 @@ width: 25%!important
 }
 }
 </style>
-<!--[if IE]><div class="ie-browser"><![endif]-->
-<table bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" class="nl-container" role="presentation" style="table-layout: fixed; vertical-align: top; min-width: 320px; Margin: 0 auto; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF; width: 100%;" valign="top" width="100%">
-<tbody>
-<tr style="vertical-align: top;" valign="top">
-<td style="word-break: break-word; vertical-align: top; border-collapse: collapse;" valign="top">
-<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#FFFFFF"><![endif]-->
-<div style="background-color:#fbfdff;">
-<div class="block-grid" style="Margin: 0 auto; min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: #fbfdff;;">
-<div style="border-collapse: collapse;display: table;width: 100%;background-color:#fbfdff;">
-<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:900px"><tr class="layout-full-width" style="background-color:#fbfdff"><![endif]-->
-<!--[if (mso)|(IE)]><td align="center" width="900" style="background-color:#fbfdff;width:900px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-<div class="col num12" style="min-width: 320px; max-width: 900px; display: table-cell; vertical-align: top;;">
-<div style="width:100% !important;">
-<!--[if (!mso)&(!IE)]><!-->
-<div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-<!--<![endif]-->
-<div align="left" class="img-container left fullwidthOnMobile fixedwidth" style="padding-right: 0px;padding-left: 0px;">
-<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="left"><![endif]-->
-<a href="https://lightblocks.biz" target="_blank">
-  <img src="https://lightblocks.biz/images/lightblocksblue.png" alt="Image" border="0" class="left fixedwidth" src="" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; clear: both; border: 0; height: auto; float: none; width: 100%; max-width: 180px; display: block; margin-bottom: 25px;" title="Image" width="180">
-</a>
-<!--[if mso]></td></tr></table><![endif]-->
-</div>
-<!--[if (!mso)&(!IE)]><!-->
-</div>
-<!--<![endif]-->
-</div>
-</div>
-<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-</div>
-</div>
-</div>
-
-<div style="background-color: #fbfdff;">
-    <div class="block-grid mixed-two-up" style="Margin: 0 auto; min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;;">
-        <div style="border-collapse: collapse;display: table;width: 100%;background-color:#fff;">
-
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fff;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:900px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-        <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color:transparent;width:600px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-
-            <div class="col num8" style="display: table-cell; vertical-align: top; min-width: 320px; max-width: 600px;;">
-                <div style="width:100% !important;">
-                <!--[if (!mso)&(!IE)]><!-->
-                    <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                    <!--<![endif]-->
-                    <div style="font-size:16px;text-align:left;">
-						<div class="email-header" style="padding:60px; padding-left:100px; background-color: #002060;">
-							
-                            <h1 class="email-text-1" style="margin-bottom:30px;font-size:23px;color: #fff;font-weight: 600;text-align:center">Email Verification</h1>
-                            
-                            <p class="email-text-2" style="margin-bottom:40px;color: #fff;font-size:16px;text-align:left;line-height: 35px;">Hello {{ $user->first_name }},</p>
-
-                            <p class="email-text-2" style="margin-bottom:40px;color: #fff;font-size:16px;text-align:left;line-height: 35px;">
-                                Welcome to LightBlocks. Click the button below to verify your email address 
-                            </p>
-
-                            <div class="text-center">
-                                <a href="{{ $url }}" class="btn-block go-to-dashboard" style="width:100%; color:#fff;margin: 0px; background-color: #ff8b00;">Verify Email Address</a>
-                            </div>
-
-							<p class="email-text-2" style="margin-top:40px;color: #fff;font-size:16px;text-align:left;line-height: 35px;">
-                                Having issues with the button above? Kindly click on the link below or copy and paste it in your browser
-                            </p>
-
-							<a href="{{ $url }}">{{ $url }}</a>
-                        </div>
-                    </div>
-                    <!--[if (!mso)&(!IE)]><!-->
-                    </div>
-                <!--<![endif]-->
-                </div>
-            </div>
-        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-        <!--[if (mso)|(IE)]></td><td align="center" width="300" style="background-color:transparent;width:300px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-
-        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-        </div>
-    </div>
-</div>
-
-<div style="background-color:#fbfdff;">
-<div class="block-grid mixed-two-up" style="Margin: 0 auto; min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: #fbfdff;;">
-<div style="border-collapse: collapse;display: table;width: 100%;background-color:#fbfdff;">
-<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:900px"><tr class="layout-full-width" style="background-color:#fbfdff"><![endif]-->
-<!--[if (mso)|(IE)]><td align="center" width="600" style="background-color:#fbfdff;width:600px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-<div class="col num8" style="display: table-cell; vertical-align: top; min-width: 320px; max-width: 600px;;">
-<div style="width:100% !important;">
-<!--[if (!mso)&(!IE)]><!-->
-<div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-<!--<![endif]-->
-<div style="font-size:16px;text-align:center;">
-<p class="email-contact" style="color: #707070;font-size:18px;margin-left:0px;margin:10px 0px;text-align:left">hello@lightblocks.biz </p>
-</div>
-<!--[if (!mso)&(!IE)]><!-->
-</div>
-<!--<![endif]-->
-</div>
-</div>
-<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-<!--[if (mso)|(IE)]></td><td align="center" width="300" style="background-color:#fbfdff;width:300px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-<div class="col num4" style="display: table-cell; vertical-align: top; max-width: 320px; min-width: 300px;;">
-<div style="width:100% !important;">
-<!--[if (!mso)&(!IE)]><!-->
-<div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-<!--<![endif]-->
-<table cellpadding="0" cellspacing="0" class="social_icons" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top" width="100%">
-<tbody>
-<tr style="vertical-align: top;" valign="top">
-<td style="word-break: break-word; vertical-align: top; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; border-collapse: collapse;" valign="top">
-<table activate="activate" align="center" alignment="alignment" cellpadding="0" cellspacing="0" class="social_table" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: undefined; mso-table-tspace: 0; mso-table-rspace: 0; mso-table-bspace: 0; mso-table-lspace: 0;" to="to" valign="top">
-<tbody>
-<tr align="center" style="vertical-align: top; display: inline-block; text-align: center;" valign="top">
-<td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="" target="_blank" style="color: #707070;"><i class="fab fa-facebook-f icons" style="margin: 0px 15px;color: #707070 !important;"></i></a>
-</td>
-<td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="" target="_blank"><i class="fab fa-twitter icons" style="margin: 0px 15px;color: #707070;"></i></a>
-</td>
-<td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="" target="_blank"><i class="fab fa-instagram icons" style="margin: 0px 15px;color: #707070;"></i></a>
-</td>
-<td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="" target="_blank"><i class="fab fa-linkedin-in icons" style="margin: 0px 15px;color: #707070;"></i></a>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<!--[if (!mso)&(!IE)]><!-->
-</div>
-<!--<![endif]-->
-</div>
-</div>
-<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-</div>
-</div>
-</div>
-<div style="background-color:#fbfdff;">
-<div class="block-grid" style="Margin: 0 auto; min-width: 320px; max-width: 900px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: #fbfdff;;">
-<div style="border-collapse: collapse;display: table;width: 100%;background-color:#fbfdff;">
-<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:900px"><tr class="layout-full-width" style="background-color:#fbfdff"><![endif]-->
-<!--[if (mso)|(IE)]><td align="center" width="900" style="background-color:#fbfdff;width:900px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-<div class="col num12" style="min-width: 320px; max-width: 900px; display: table-cell; vertical-align: top;;">
-<div style="width:100% !important;">
-<!--[if (!mso)&(!IE)]><!-->
-<div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-<!--<![endif]-->
 
 
-<!--[if (!mso)&(!IE)]><!-->
+<div style="width:100%!important;min-width:100%;margin:0;padding:0px !important;background-color:#ffffff">
+		
+	<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;height:100%;width:100%;table-layout:fixed" cellpadding="0" cellspacing="0" width="100%" border="0">
+		<tbody>
+			<tr style="vertical-align:top">
+				<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:center;background-color:#ffffff" align="center" valign="top">
+					<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;background-color:transparent" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+						<tbody>
+							<tr style="vertical-align:top">
+								<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top" width="100%">
+									
+									
+									<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;max-width:500px;margin:0 auto;text-align:inherit" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+										<tbody>
+											<tr style="vertical-align:top">
+												<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top" width="100%">
+													<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;width:100%;max-width:500px;color:#000000;background-color:transparent" cellpadding="0" cellspacing="0" width="100%" bgcolor="transparent">
+														<tbody>
+															<tr style="vertical-align:top">
+																<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:center;font-size:0">
+																	
+																	
+																	<div style="display:inline-block;vertical-align:top;width:500px">
+																		<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+																			<tbody>
+																				<tr style="vertical-align:top">
+																					<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;background-color:transparent;padding-top:5px;padding-right:0px;padding-bottom:5px;padding-left:0px;border-top:0px solid transparent;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent">
+																						<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" width="100%" border="0">
+																							<tbody>
+																								<tr style="vertical-align:top">
+																									<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;width:100%;padding-top:10px;padding-right:30px;padding-bottom:10px;padding-left:30px" align="center">
+																										<div align="center">
+																											<img style="outline:none;text-decoration:none;clear:both;display:block;border:0;height:auto;line-height:100%;margin:0 auto;float:none;width:200px" align="center" border="0" src="https://lightblocks.biz/images/lightblocksblue.png" alt="Image" title="Image" class="CToWUd">
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	
+																	
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;background-color:transparent" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+						<tbody>
+							<tr style="vertical-align:top">
+								<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top" width="100%">
+									
+									
+									<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;max-width:500px;margin:0 auto;text-align:inherit" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+										<tbody>
+											<tr style="vertical-align:top">
+												<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top" width="100%">
+													<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;width:100%;max-width:500px;color:#000000;background-color:transparent" cellpadding="0" cellspacing="0" width="100%" bgcolor="transparent">
+														<tbody>
+															<tr style="vertical-align:top">
+																<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:center;font-size:0">
+																	
+																	
+																	<div style="display:inline-block;vertical-align:top;width:500px">
+																		<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+																			<tbody>
+																				<tr style="vertical-align:top">
+																					<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;background-color:transparent;padding-top:0;padding-right:20px;padding-bottom:20px;padding-left:20px">
+																						<div style="font-size:12px;line-height:14px;text-align:center;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																							<!-- <p style="margin:0;font-size:12px;line-height:14px;text-align:center">If you have any issues with 
+																								payment, kindly reply to this email or send an email to
+																								<a style="font-size:12px;line-height:14px;text-align:center;color:#50a1f7" href="mailto:profchydon@gmail.com?cc=complaints@paystack.com" target="_blank">profchydon@gmail.com</a>&nbsp;
+																							</p> -->
+																						</div>
+																					</td>
+																				</tr>
+																				<tr style="vertical-align:top">
+																					<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;background-color:transparent;padding-top:0;padding-right:0;padding-bottom:30px;padding-left:0;border-top:1px solid #ededed;border-right:1px solid #ededed;border-bottom:1px solid #ededed;border-left:1px solid #ededed">
+																						
+																						<div style="font-size:14px;line-height:17px;text-align:center;color:white;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px;background:#ff9a00">
+																							<h2 style="margin:0;font-size:22px;line-height:17px;text-align:center">Verify your email address</h2>
+																						</div>
+																						
+																						<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;background:#0d3e65" cellpadding="0" cellspacing="0" width="100%">
+																							<tbody>
+																								<tr style="vertical-align:top">
+																									<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:40px;padding-right:10px;padding-bottom:0px;padding-left:10px">
+																										<div style="color:#fdfffe;line-height:150%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																											<div style="padding-bottom:40px">
+																												
+																												<p style="margin:0;font-size:14px;line-height:17px;text-align:center;padding-top:10px">
+																													<span style="font-size:36px;line-height:43px">
+																														<strong>
+																															<span style="line-height:43px;font-size:36px">WELCOME CHIDI</span>
+																														</strong>
+																													</span>
+																													<br>
+																												</p>
+																												<!-- <p style="margin:0 auto;max-width:300px;font-size:12px;line-height:18px;text-align:center">
+																													<span style="font-size:18px;line-height:20px">We are happy to have you on LightBlocks</span>
+																												</p> -->
+																											</div>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+																						<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" width="100%">
+																							<div style="font-size:16px;text-align:left;">
+																								<div class="email-header" style="padding:50px; background-color: #FFF;">
+																		
+																									<p class="email-text-2" style="margin-bottom:40px;color: #000;font-size:16px;text-align:left;line-height: 35px;">
+																										Welcome to LightBlocks. Click the button below to verify your email address 
+																									</p>
+																		
+																									<div class="text-center">
+																										<a href="{{ $url }}" class="btn-block go-to-dashboard" style="width:100%; color:#fff;margin: 0px; background-color: #ff9a00;">Verify Email Address</a>
+																									</div>
+																		
+																									<p class="email-text-2" style="margin-top:40px;color: #00;font-size:16px;text-align:left;line-height: 35px;">
+																										Having issues with the button above? Kindly click on the link below or copy and paste it in your browser
+																									</p>
+																		
+																									<a href="{{ $url }}">{{ $url }}</a>
+																								</div>
+																							</div>
+																						</table>
+																						
+																						
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	
+																	
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;background-color:transparent" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+						<tbody>
+							<tr style="vertical-align:top">
+								<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top" width="100%">
+									
+									
+									<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;max-width:500px;margin:0 auto;text-align:inherit" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+										<tbody>
+											<tr style="vertical-align:top">
+												<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top" width="100%">
+													<table style="border-spacing:0;border-collapse:collapse;vertical-align:top;width:100%;max-width:500px;color:#000000;background-color:transparent" cellpadding="0" cellspacing="0" width="100%" bgcolor="transparent">
+														<tbody>
+															<tr style="vertical-align:top">
+																<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:center;font-size:0">
+																	
+																	
+																	<div style="display:inline-block;vertical-align:top;width:500px">
+																		<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" align="center" width="100%" border="0">
+																			<tbody>
+																				<tr style="vertical-align:top">
+																					<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;background-color:transparent;padding-top:30px;padding-right:0px;padding-bottom:30px;padding-left:0px;border-top:0px solid transparent;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent">
+																						<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" width="100%">
+																							<tbody>
+																								<tr style="vertical-align:top">
+																									<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px">
+																										<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																											<div style="font-size:12px;line-height:14px;text-align:center;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<p style="margin:0;font-size:12px;line-height:14px;text-align:center">© LightBlocks 2020
+																													<br>
+																												</p>
+																											</div>
+																										</div>
+																									</td>
+																								</tr>
+																							</tbody>
+																						</table>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																	
+																	
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-<!--<![endif]-->
-</div>
-</div>
-<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-</div>
-</div>
-</div>
-<!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-</td>
-</tr>
-</tbody>
-</table>
-<!--[if (IE)]></div><![endif]-->
+
 
 </body>
 </html>
