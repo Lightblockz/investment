@@ -36,7 +36,7 @@ class VerificationMail extends Mailable
      */
     public function build()
     {
-        return $this->from("hello@54gene.com",'Lightblocks')
+        return $this->from("hello@lightblocks.biz",'Lightblocks')
         ->subject('LightBlocks Email Verification')
         ->view('mails.verification')
         ->with([

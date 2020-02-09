@@ -42,7 +42,7 @@
 
     .go-to-dashboard {
       padding: 20px 100px;
-      background: #f8be13;
+      background: #ff8b00;
       font-weight: 500;
       color: #fff;
       font-size: 20px;
@@ -496,8 +496,8 @@ width: 25%!important
 <!--<![endif]-->
 <div align="left" class="img-container left fullwidthOnMobile fixedwidth" style="padding-right: 0px;padding-left: 0px;">
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="left"><![endif]-->
-<a href="https://lightblocks.live" target="_blank">
-  <img alt="Image" border="0" class="left fixedwidth" src="" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; clear: both; border: 0; height: auto; float: none; width: 100%; max-width: 180px; display: block;" title="Image" width="180">
+<a href="https://lightblocks.biz" target="_blank">
+  <img src="https://lightblocks.biz/images/lightblocksblue.png" alt="Image" border="0" class="left fixedwidth" src="" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; clear: both; border: 0; height: auto; float: none; width: 100%; max-width: 180px; display: block; margin-bottom: 25px;" title="Image" width="180">
 </a>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>
@@ -525,20 +525,21 @@ width: 25%!important
                     <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
                     <!--<![endif]-->
                     <div style="font-size:16px;text-align:left;">
-                        <div class="email-header" style="padding:60px; padding-left:100px">
-                            <h1 class="email-text-1" style="margin-bottom:30px;font-size:23px;color: #707070;font-weight: 600;text-align:center">Email Verification</h1>
+						<div class="email-header" style="padding:60px; padding-left:100px; background-color: #002060;">
+							
+                            <h1 class="email-text-1" style="margin-bottom:30px;font-size:23px;color: #fff;font-weight: 600;text-align:center">Email Verification</h1>
                             
-                            <p class="email-text-2" style="margin-bottom:40px;color: #707070;font-size:16px;text-align:left;line-height: 35px;">Hello {{ $user->first_name }},</p>
+                            <p class="email-text-2" style="margin-bottom:40px;color: #fff;font-size:16px;text-align:left;line-height: 35px;">Hello {{ $user->first_name }},</p>
 
-                            <p class="email-text-2" style="margin-bottom:40px;color: #707070;font-size:16px;text-align:left;line-height: 35px;">
+                            <p class="email-text-2" style="margin-bottom:40px;color: #fff;font-size:16px;text-align:left;line-height: 35px;">
                                 Welcome to LightBlocks. Click the button below to verify your email address 
                             </p>
 
                             <div class="text-center">
-                                <a href="{{ $url }}" class="btn-block go-to-dashboard" style="width:100%; color:#fff;margin: 0px 150px;">Verify Email Address</a>
+                                <a href="{{ $url }}" class="btn-block go-to-dashboard" style="width:100%; color:#fff;margin: 0px; background-color: #ff8b00;">Verify Email Address</a>
                             </div>
 
-							<p class="email-text-2" style="margin-bottom:40px;color: #707070;font-size:16px;text-align:left;line-height: 35px;">
+							<p class="email-text-2" style="margin-top:40px;color: #fff;font-size:16px;text-align:left;line-height: 35px;">
                                 Having issues with the button above? Kindly click on the link below or copy and paste it in your browser
                             </p>
 
@@ -570,7 +571,7 @@ width: 25%!important
 <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
 <!--<![endif]-->
 <div style="font-size:16px;text-align:center;">
-<p class="email-contact" style="color: #707070;font-size:18px;margin-left:0px;margin:10px 0px;text-align:left">hello@lightblocks.live </p>
+<p class="email-contact" style="color: #707070;font-size:18px;margin-left:0px;margin:10px 0px;text-align:left">hello@lightblocks.biz </p>
 </div>
 <!--[if (!mso)&(!IE)]><!-->
 </div>
@@ -592,16 +593,16 @@ width: 25%!important
 <tbody>
 <tr align="center" style="vertical-align: top; display: inline-block; text-align: center;" valign="top">
 <td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="https://facebook.com/54gene" target="_blank" style="color: #707070;"><i class="fab fa-facebook-f icons" style="margin: 0px 15px;color: #707070 !important;"></i></a>
+  <a href="" target="_blank" style="color: #707070;"><i class="fab fa-facebook-f icons" style="margin: 0px 15px;color: #707070 !important;"></i></a>
 </td>
 <td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="https://twitter.com/weare54gene/" target="_blank"><i class="fab fa-twitter icons" style="margin: 0px 15px;color: #707070;"></i></a>
+  <a href="" target="_blank"><i class="fab fa-twitter icons" style="margin: 0px 15px;color: #707070;"></i></a>
 </td>
 <td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="https://www.instagram.com/weare54gene/" target="_blank"><i class="fab fa-instagram icons" style="margin: 0px 15px;color: #707070;"></i></a>
+  <a href="" target="_blank"><i class="fab fa-instagram icons" style="margin: 0px 15px;color: #707070;"></i></a>
 </td>
 <td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 3px; padding-left: 3px; border-collapse: collapse;" valign="top">
-  <a href="https://www.linkedin.com/company/54gene" target="_blank"><i class="fab fa-linkedin-in icons" style="margin: 0px 15px;color: #707070;"></i></a>
+  <a href="" target="_blank"><i class="fab fa-linkedin-in icons" style="margin: 0px 15px;color: #707070;"></i></a>
 </td>
 </tr>
 </tbody>

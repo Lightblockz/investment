@@ -47,16 +47,12 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('password/reset/{email}/{token}', 'UserController@setPassword')->name('set.password');
     Route::get('email/verify/{id}/{token}', 'UserController@verifyEmail')->name('verify.email');
     Route::get('/account/dashboard', 'UserController@dashboard')->name('dashboard');
-
     Route::post('/invest/now', 'UserController@invest')->name('invest');
     Route::post('/invest/via/bank/save', 'UserController@investViaBank')->name('investbank');
     Route::get('/invest/via/bank', 'UserController@investViaBankView')->name('invest.bank.view');
-
     Route::get('/account/bank', 'UserController@bankAccount')->name('bank.account');
-  
     Route::post('/account/bank/save', 'UserController@saveBankAccount')->name('save.bank.account');
     Route::get('/bank/account/delete/{id}', 'UserController@deleteBankAccount')->name('delete.bank.account');
-
 
     Route::group(['prefix' => 'transactions'], function () {
 
