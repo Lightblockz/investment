@@ -82,10 +82,10 @@ class UserController extends Controller
 
             if ($createUser) {
 
-                Mail::to($createUser->email)->send(new VerificationMail($createUser));
+                // Mail::to($createUser->email)->send(new VerificationMail($createUser));
 
-                return view('success', ['email' => $request->email , 'name' => $request->first_name]);
-                // return redirect()->intended('/signin')->withSuccess('Account successfully created. Please sign in.');
+                // return view('success', ['email' => $request->email , 'name' => $request->first_name]);
+                return redirect()->intended('/signin')->withSuccess('Account successfully created. Please sign in.');
             }
 
         } catch (\Throwable $th) {
