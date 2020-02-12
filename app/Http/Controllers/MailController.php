@@ -19,7 +19,7 @@ class MailController extends Controller
         $request = json_encode($request->all());
         $request = (array)$request;
         $request = (object)$request;
-        var_dump($request);
+        var_dump($request->email);
         die();
         $mail = Mail::to($request->email)->send(new VerificationMail($request));
         return true;
