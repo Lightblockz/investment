@@ -11,16 +11,13 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    // public $afref_url = "http://157.245.141.146:8007/api/";
+    public $url = "http://157.245.141.146:8007";
 
-    public $url = "http://localhost:8000/";
-
-    public function _mailCall ($request, $url)
+    public function _sendMail($data , $method , $header = [], $url)
     {
+
       try {
-
-        // $data = Json_encode($request, TRUE);
-
+        // $data = Json_encode($data, TRUE);
         $curl = \curl_init();
         \curl_setopt_array(
             $curl, array(
@@ -28,19 +25,16 @@ class Controller extends BaseController
               CURLOPT_RETURNTRANSFER => true,
               CURLOPT_ENCODING => "",
               CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 100,
+              CURLOPT_TIMEOUT => 30,
               CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => "POST",
-              CURLOPT_POSTFIELDS => $request,
+              CURLOPT_CUSTOMREQUEST => $method,
+              CURLOPT_POSTFIELDS => $data,
               CURLOPT_HTTPHEADER => array(
                 "Content-Type: application/json"
             ),
         ));
 
-        dd($this->url.$url);
-
         $response = \curl_exec($curl);
-        dd($response);
         $err = \curl_error($curl);
         // $response = Json_decode($response);
         \curl_close($curl);
