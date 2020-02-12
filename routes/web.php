@@ -11,7 +11,11 @@
 |
 */
 
+Route::group(['prefix' => 'mail'], function () {
 
+    Route::post('register/success', 'MailController@registrationMail')->name('success.mail');
+    
+});
 
 Route::get('/', function () {
     return view('signin');
@@ -87,6 +91,8 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
 });
+
+
 
 
 
