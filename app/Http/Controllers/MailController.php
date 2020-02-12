@@ -17,6 +17,8 @@ class MailController extends Controller
     public function registrationMail(Request $request)
     {
         $request = json_encode($request);
+        $request = (array)$request;
+        $request = (object)$request;
         $mail = Mail::to($request->email)->send(new VerificationMail($request));
         return true;
     }
