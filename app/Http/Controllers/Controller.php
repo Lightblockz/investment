@@ -17,7 +17,7 @@ class Controller extends BaseController
     {
 
       try {
-        // $data = Json_encode($data, TRUE);
+        $data = Json_encode($data, TRUE);
         $curl = \curl_init();
         \curl_setopt_array(
             $curl, array(

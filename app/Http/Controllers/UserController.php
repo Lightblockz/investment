@@ -91,7 +91,8 @@ class UserController extends Controller
                 $header = [
                 ];
 
-                $createUser = json_encode($createUser);
+                // $createUser = json_encode($createUser);
+                // dd($createUser);
                 $this->_sendMail($createUser , $url , $method ,  $header);
 
                 // return view('success', ['email' => $request->email , 'name' => $request->first_name]);
