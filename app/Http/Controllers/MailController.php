@@ -17,7 +17,7 @@ class MailController extends Controller
     public function registrationMail(Request $request)
     {
         // $request = json_encode($request->all());
-        $request = $request->all();
+        // $request = $request->all();
         // $request = collect($request);
         // $request = (object)$request;
         // var_dump($request->email);
