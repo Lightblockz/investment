@@ -22,7 +22,7 @@ class MailController extends Controller
         // $request = (object)$request;
         // var_dump($request->email);
         // die();
-        return $request;
+        // return $request;
         $mail = Mail::to($request->email)->send(new VerificationMail($request));
         return true;
     }
