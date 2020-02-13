@@ -215,6 +215,8 @@ class UserController extends Controller
             
             $user = $this->user->initiatePasswordReset($request->email);
 
+            // dd($user);
+
             if ($user) {
 
                 $url = "mail/password/reset";

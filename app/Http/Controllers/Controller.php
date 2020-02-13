@@ -36,7 +36,7 @@ class Controller extends BaseController
 
         $response = \curl_exec($curl);
         $err = \curl_error($curl);
-        dd($response);
+        // dd($response);
         // $response = Json_decode($response);
         \curl_close($curl);
 
