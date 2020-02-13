@@ -14,6 +14,7 @@
 Route::group(['prefix' => 'mail'], function () {
 
     Route::post('register/success', 'MailController@registrationMail')->name('success.mail');
+    Route::post('password/reset', 'MailController@resetPassword')->name('reset.password.mail');
     
 });
 

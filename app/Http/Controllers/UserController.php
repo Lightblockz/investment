@@ -217,7 +217,14 @@ class UserController extends Controller
 
             if ($user) {
 
-                Mail::to($user->email)->send(new ResetPasswordMail($user));
+                $url = "mail/password/reset";
+                $method = "POST";
+
+                // $createUser = json_encode($createUser);
+                // dd($createUser);
+                $this->_sendMail($user , $method , $url);
+
+                // Mail::to($user->email)->send(new ResetPasswordMail($user));
 
                 return view('password_sent', ['name' => $user->first_name]);
             }

@@ -19,8 +19,18 @@ class MailController extends Controller
 
         $mail = Mail::to($request->email)->send(new VerificationMail($request));
         return $this->sendResponse(true, 'Ok');
-        
+
     }
+
+    public function resetPassword(Request $request)
+    {
+
+        Mail::to($request->email)->send(new ResetPasswordMail($request));
+        return $this->sendResponse(true, 'Ok');
+
+    }
+
+    
 
     
 }
