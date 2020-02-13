@@ -18,8 +18,8 @@ class Controller extends BaseController
         // dd($this->url.$url);
       try {
         $data = Json_encode($data, TRUE);
-        $curl = \curl_init();
-        \curl_setopt_array(
+        $curl = curl_init();
+        curl_setopt_array(
             $curl, array(
               CURLOPT_URL => $this->url.$url,
               CURLOPT_RETURNTRANSFER => true,
@@ -34,11 +34,11 @@ class Controller extends BaseController
             ),
         ));
 
-        $response = \curl_exec($curl);
-        $err = \curl_error($curl);
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
         // dd($response);
         // $response = Json_decode($response);
-        \curl_close($curl);
+        curl_close($curl);
 
         if ($response == NULL) {
             return false;
