@@ -76,6 +76,12 @@ class InvestmentPlanSeeder extends Seeder
 
         InvestmentPlan::create([
             'title' => 'Exclusive',
+            'amount' => 3000000,
+            'interest' => 0.20,
+        ]);
+
+        InvestmentPlan::create([
+            'title' => 'Exclusive',
             'amount' => 5000000,
             'interest' => 0.20,
         ]);
