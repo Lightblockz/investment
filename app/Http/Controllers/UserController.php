@@ -88,12 +88,10 @@ class UserController extends Controller
                 // Mail::to($createUser->email)->send(new VerificationMail($createUser));
                 $url = "mail/register/success";
                 $method = "POST";
-                $header = [
-                ];
-
+                
                 // $createUser = json_encode($createUser);
                 // dd($createUser);
-                $this->_sendMail($createUser , $url , $method ,  $header);
+                $this->_sendMail($createUser , $method , $url);
 
                 // return view('success', ['email' => $request->email , 'name' => $request->first_name]);
                 return redirect()->intended('/signin')->withSuccess('Account successfully created. Please sign in.');

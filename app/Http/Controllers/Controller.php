@@ -11,11 +11,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public $url = "http://157.245.141.146:8007";
+    public $url = "http://157.245.141.146:8007/";
 
-    public function _sendMail($data , $method , $header = [], $url)
+    public function _sendMail($data , $method , $url)
     {
-
+        // dd($this->url.$url);
       try {
         $data = Json_encode($data, TRUE);
         $curl = \curl_init();
@@ -36,6 +36,7 @@ class Controller extends BaseController
 
         $response = \curl_exec($curl);
         $err = \curl_error($curl);
+        dd($response);
         // $response = Json_decode($response);
         \curl_close($curl);
 
@@ -49,5 +50,39 @@ class Controller extends BaseController
 
       }
 
+    }
+
+
+    /**
+     * success response method.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sendResponse($result, $message)
+    {
+    	$response = [
+            'success' => true,
+            'data'    => $result,
+            'message' => $message,
+        ];
+
+        return response()->json($response, 200);
+    }
+
+
+    /**
+     * return error response.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sendError($error, $errorMessages = [], $code = 404)
+    {
+        $response = [
+            'success' => false,
+            'data'    => $errorMessages,
+            'message' => $error,
+        ];
+        
+        return response()->json($response, $code);
     }
 }

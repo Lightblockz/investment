@@ -24,7 +24,8 @@ class MailController extends Controller
         // die();
         // return $request;
         $mail = Mail::to($request->email)->send(new VerificationMail($request));
-        return true;
+        return $this->sendResponse(true, 'Ok');
+        // return true;
     }
 
     
