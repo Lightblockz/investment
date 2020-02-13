@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     public function _sendMail($data , $method , $url)
     {
-        // dd($this->url.$url);
+        
       try {
         $data = Json_encode($data, TRUE);
         $curl = curl_init();
@@ -36,8 +36,6 @@ class Controller extends BaseController
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-        // dd($response);
-        // $response = Json_decode($response);
         curl_close($curl);
 
         if ($response == NULL) {
