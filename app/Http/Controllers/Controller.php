@@ -36,6 +36,7 @@ class Controller extends BaseController
         ));
 
         $response = curl_exec($curl);
+        dd($response);
         $err = curl_error($curl);
         curl_close($curl);
 
