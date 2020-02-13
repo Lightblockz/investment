@@ -23,6 +23,7 @@ class Controller extends BaseController
             $curl, array(
               CURLOPT_URL => $this->url.$url,
               CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_SSL_VERIFYPEER, false,
               CURLOPT_ENCODING => "",
               CURLOPT_MAXREDIRS => 10,
               CURLOPT_TIMEOUT => 30,
