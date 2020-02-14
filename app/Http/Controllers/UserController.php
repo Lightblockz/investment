@@ -85,13 +85,13 @@ class UserController extends Controller
                 // dd($createUser);
                 // redirect()->route('success.mail', ['user' => $createUser]);
 
-                // Mail::to($createUser->email)->send(new VerificationMail($createUser));
-                $url = "mail/register/success";
-                $method = "POST";
+                Mail::to($createUser->email)->send(new VerificationMail($createUser));
+                // $url = "mail/register/success";
+                // $method = "POST";
 
                 // $createUser = json_encode($createUser);
                 // dd($createUser);
-                $this->_sendMail($createUser , $method , $url);
+                // $this->_sendMail($createUser , $method , $url);
 
                 return view('success', ['email' => $request->email , 'name' => $request->first_name]);
                 // return redirect()->intended('/signin')->withSuccess('Account successfully created. Please sign in.');
@@ -219,14 +219,14 @@ class UserController extends Controller
 
             if ($user) {
 
-                $url = "mail/password/reset";
-                $method = "POST";
+                // $url = "mail/password/reset";
+                // $method = "POST";
 
-                // $createUser = json_encode($createUser);
-                // dd($createUser);
-                $this->_sendMail($user , $method , $url);
+                // // $createUser = json_encode($createUser);
+                // // dd($createUser);
+                // $this->_sendMail($user , $method , $url);
 
-                // Mail::to($user->email)->send(new ResetPasswordMail($user));
+                Mail::to($user->email)->send(new ResetPasswordMail($user));
 
                 return view('password_sent', ['name' => $user->first_name]);
             }
