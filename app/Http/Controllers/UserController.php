@@ -116,18 +116,23 @@ class UserController extends Controller
 
             $credentials = $request->only('email', 'password');
 
-            
-
             if (Auth::attempt($credentials)) {
-                
-                // Authentication passed...
-                if (Auth::user()->person == 1) {
 
-                    return redirect()->intended('admin/account/dashboard');
+                if (Auth::user()->verified == 1) {
+                    
+                    // Authentication passed...
+                    if (Auth::user()->person == 1) {
+
+                        return redirect()->intended('admin/account/dashboard');
+
+                    }
+
+                    return redirect()->intended('user/account/dashboard');
 
                 }
 
-                return redirect()->intended('user/account/dashboard');
+                return back()
+                ->withErrors("Your account has not been verified. Kindly verify by clicking the link sent to your email");
 
             }else {
                 
@@ -210,16 +215,7 @@ class UserController extends Controller
             
             $user = $this->user->initiatePasswordReset($request->email);
 
-            // dd($user);
-
             if ($user) {
-
-                // $url = "mail/password/reset";
-                // $method = "POST";
-
-                // // $createUser = json_encode($createUser);
-                // // dd($createUser);
-                // $this->_sendMail($user , $method , $url);
 
                 Mail::to($user->email)->send(new ResetPasswordMail($user));
 
@@ -275,7 +271,7 @@ class UserController extends Controller
 
             }
 
-            return redirect()->intended('user/account/dashboard');
+            return redirect()->intended('signin')->withSuccess('Your password has been successfully changed.');
 
 
         } catch (\Throwable $th) {

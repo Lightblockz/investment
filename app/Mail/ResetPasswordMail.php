@@ -35,13 +35,13 @@ class ResetPasswordMail extends Mailable
      */
     public function build()
     {
-        return $this->from("hello@54gene.com",'Lightblocks')
+        return $this->from("hello@lightblocks.biz",'Lightblocks')
         ->subject('Reset your LightBlocks passsword')
         ->view('mails.password_reset')
         ->with([
           'user' => $this->user,
-          'token' => $this->user->token,
-          'url' => url("/user/password/reset/{$this->user->email}/{$this->user->token}"),
+          'token' => $this->user->reset_token,
+          'url' => url("/user/password/reset/{$this->user->email}/{$this->user->reset_token}"),
         ]);
 
     }

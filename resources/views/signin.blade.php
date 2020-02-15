@@ -124,6 +124,9 @@
 
             .alert-danger ul {
                 list-style: decimal;
+                padding: 2px 25px;
+                font-size: 12px;
+                font-weight: 500;
             }
 
             small {

@@ -31,7 +31,7 @@ class UserRepository
             $userExist =  User::whereEmail($email)->first();
 
             $userExist->update([
-                'token' => $token
+                'reset_token' => $token
             ]);
 
             if ($userExist) {
@@ -109,6 +109,7 @@ class UserRepository
 
             $update = $userExist->update([
                 'token' => '',
+                'verified' => 1,
                 'email_verified_at' => Carbon::now()->toDateTimeString(),
                 'last_login' => Carbon::now()->toDateTimeString()
             ]);
@@ -124,7 +125,7 @@ class UserRepository
         
         return DB::transaction(function() use ($email , $token) {
             
-            $userExist =  User::whereEmail($email)->where('token' , $token)->first();
+            $userExist =  User::whereEmail($email)->where('reset_token' , $token)->first();
  
             if ($userExist == null) {
                 
@@ -152,14 +153,14 @@ class UserRepository
             }
 
             $update = $user->update([
-                'token' => '',
+                'reset_token' => '',
                 'password' => $request->password,
                 'last_login' => Carbon::now()->toDateTimeString()
             ]);
 
             if ($update) {
                
-                Auth::login($user, true);
+                // Auth::login($user, true);
 
                 return true;
 
