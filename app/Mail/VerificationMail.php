@@ -43,7 +43,6 @@ class VerificationMail extends Mailable
           'user' => $this->user,
           'token' => $this->user->token,
           'url' => "https://dashboard.lightblocks.biz/user/email/verify/{$this->user->id}/{$this->user->token}",
-        //   'url' => url("/user/email/verify/{$this->user->id}/{$this->user->token}"),
         ]);
 
     }
