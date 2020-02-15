@@ -585,7 +585,7 @@ width: 25%!important
 																												<p style="margin:0;font-size:14px;line-height:17px;text-align:center;padding-top:10px">
 																													<span style="font-size:36px;line-height:43px">
 																														<strong>
-																															<span style="line-height:43px;font-size:36px">WELCOME CHIDI</span>
+																														<span style="line-height:43px;font-size:36px">WELCOME {{$user->first_name}}</span>
 																														</strong>
 																													</span>
 																													<br>
