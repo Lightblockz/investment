@@ -101,7 +101,7 @@ class UserRepository
             
             $userExist =  User::whereId($id)->where('token' , $token)->first();
 
-            dd($userExist);
+            // dd($userExist);
  
             if ($userExist == null) {
                 
@@ -110,6 +110,8 @@ class UserRepository
             }
 
             Auth::login($userExist, true);
+
+            dd(Auth::user());
 
             $update = $userExist->update([
                 'token' => '',
