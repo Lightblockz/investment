@@ -109,7 +109,7 @@ class UserRepository
 
             Auth::login($userExist, true);
 
-            dd("A");
+            dd(Auth::user()->email);
 
             User::whereId($id)->where('token' , $token)->update([
                 'token' => '',
