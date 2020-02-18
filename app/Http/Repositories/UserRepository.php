@@ -80,7 +80,7 @@ class UserRepository
                 'wallet_id' => $wallet_id,
             ]);
 
-            dd($create);
+            // dd($create);
            
            if ($create && $create_wallet) {
                
