@@ -307,6 +307,7 @@ class UserController extends Controller
             "expected_total_interest"=> $expected_total_interest,
             "total_withdrawable_amount"=> $total_withdrawable_amount,
             "interest_paid"=> 0,
+            "duration" => $number_of_months
             
         ]);
 

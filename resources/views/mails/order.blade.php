@@ -610,7 +610,7 @@ width: 25%!important
 																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
 																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;border-bottom:solid 1px #ededed;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
 																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Amount&nbsp;
-                                                                                                                    <strong style="float:right">₦{{$order->amount}}</strong>
+                                                                                                                    <strong style="float:right">₦{{number_format($order->amount)}}</strong>
 																														<br>
 																													</p>
 																												</div>
@@ -658,7 +658,91 @@ width: 25%!important
 																									
 																									
 																								</tbody>
+                                                                                            </table>
+                                                                                            
+
+
+                                                                                            <table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" width="100%">
+																								<tbody>
+																									
+																									<tr style="vertical-align:top">
+																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:10px;padding-right:10px;padding-bottom:20px;padding-left:10px">
+																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<div style="font-size:14px;line-height:17px;text-align:center;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																													<p style="margin:20px 0 0;font-size:14px;line-height:17px;text-align:center">
+																														<strong>
+																															<span style="font-size:16px;line-height:19px">Investment Details</span>
+																														</strong>
+																														<br>
+																													</p>
+																												</div>
+																											</div>
+																										</td>
+																									</tr>
+																								</tbody>
 																							</table>
+																							<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" cellpadding="0" cellspacing="0" width="100%">
+																								<tbody>
+																									<tr style="vertical-align:top">
+																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
+																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;border-bottom:solid 1px #ededed;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
+																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Amount&nbsp;
+                                                                                                                    <strong style="float:right">₦{{number_format($order->amount)}}</strong>
+																														<br>
+																													</p>
+																												</div>
+																											</div>
+																										</td>
+                                                                                                    </tr>
+                                                                                                    <tr style="vertical-align:top">
+																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
+																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;border-bottom:solid 1px #ededed;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
+																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Duration&nbsp;
+                                                                                                                    <strong style="float:right">{{$order->duration}} months</strong>
+																														<br>
+																													</p>
+																												</div>
+																											</div>
+																										</td>
+                                                                                                    </tr>
+                                                                                                    @php
+                                                                                                        $interest = ($order->interest * 100);
+                                                                                                    @endphp
+																									<tr style="vertical-align:top">
+																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
+																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;border-bottom:solid 1px #ededed;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
+																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Interest&nbsp;
+																														<strong style="float:right">{{$interest}}%</strong>
+																														<br>
+																													</p>
+																												</div>
+																											</div>
+																										</td>
+																									</tr>
+																									
+																									<tr style="vertical-align:top">
+																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
+																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
+																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Expected monthly Interest&nbsp;
+                                                                                                                        <strong style="float:right">
+                                                                                                                            ₦{{number_format($order->expected_monthly_interest)}}
+																															 </strong>
+																														<br>
+																													</p>
+																												</div>
+																											</div>
+																										</td>
+																									</tr>
+																									
+																									
+																								</tbody>
+																							</table>
+
+
 																							<table style="border-spacing:0;border-collapse:collapse;vertical-align:top" align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
 																								<tbody>
 																									<tr style="vertical-align:top">
