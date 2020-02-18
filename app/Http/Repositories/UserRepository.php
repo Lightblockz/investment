@@ -111,14 +111,14 @@ class UserRepository
 
             Auth::login($userExist, true);
 
-            dd(Auth::user());
-
             $update = $userExist->update([
                 'token' => '',
                 'verified' => 1,
                 'email_verified_at' => Carbon::now()->toDateTimeString(),
                 'last_login' => Carbon::now()->toDateTimeString()
             ]);
+
+            dd($update);
 
             return true;
             
