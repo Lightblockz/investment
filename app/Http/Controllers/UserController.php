@@ -82,7 +82,6 @@ class UserController extends Controller
 
             if ($createUser) {
 
-                // dd($createUser);
                 // redirect()->route('success.mail', ['user' => $createUser]);
 
                 Mail::to($createUser->email)->send(new VerificationMail($createUser));
@@ -232,6 +231,9 @@ class UserController extends Controller
     public function setPassword($email , $token)
     {
 
+        echo $email . "<br>";
+        echo $token . "<br>";
+        dd();
         $user = $this->user->fetchUserByTokenForPasswordReset($email , $token);
 
         if (!$user) {
