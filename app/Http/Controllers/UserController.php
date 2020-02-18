@@ -149,6 +149,10 @@ class UserController extends Controller
     public function verifyEmail($id , $token)
     {
         
+        echo $id . "<br>";
+        echo $token . "<br>";
+        dd();
+
         try {
             
             $user = $this->user->fetchUserByToken($id,$token);
@@ -231,9 +235,6 @@ class UserController extends Controller
     public function setPassword($email , $token)
     {
 
-        echo $email . "<br>";
-        echo $token . "<br>";
-        dd();
         $user = $this->user->fetchUserByTokenForPasswordReset($email , $token);
 
         if (!$user) {
