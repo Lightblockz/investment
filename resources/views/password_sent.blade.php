@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>LightBlocks</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700i&display=swap" rel="stylesheet">
@@ -33,6 +33,19 @@
             img.img-responsive.outer-logo {
                 width: 270px;
                 margin-bottom: 20px;
+            }
+
+            .success-header{
+                font-size: 20px;
+                margin-bottom: 20px !important;
+            }
+
+            .btn-primary {
+                color: #fff;
+                background-color: #1c2835;
+                border-color: #1c2835;
+                padding: 10px 30px;
+                font-size: 16px;
             }
 
             .form-section {
@@ -109,6 +122,11 @@
                 border: 1px solid #1c2835;
             }
 
+            .verify-title.text-center {
+                font-size: 25px;
+                margin-bottom: 25px;
+            }
+
             .alert-danger {
                 color: #a94442;
                 background-color: #f2dede;
@@ -130,45 +148,39 @@
                     width: 200px;
                     margin-bottom: 20px;
                 }
+
+                .verify-title.text-center {
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                }
             }
 
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
+            
             <div class="content">
                 
                     <div class="container">
                         
                         <div class="row">
 
-                            <div class="col-md-offset-3 col-md-6">
+                            <div class="col-md-offset-3 col-md-6 success-body">
 
                                 <h2 class="verify-title text-center">Reset Password Email Sent</h2>
 
                                 <div class="form-section">
 
-                                   <h3> <strong>Hello {{$name}},</strong> </h3>
+                                   <h3 class="success-header"> <strong>Hello {{$name}},</strong> </h3>
 
                                    <h4>Your password reset request was successfully sent.</h4>
 
-                                    <h4>An email has been sent to the email address registered with your LightBlocks account. Please follow the instructions in the email to set a new password.</h4>
+                                    <p>
+                                        An email has been sent to the email address registered with your LightBlocks account. Please follow the instructions in the email to set a new password.    
+                                    </p>
 
-                                    <h4> <strong>Didn't receive the email?</strong> </h4>
+                                    <p> <strong>Didn't receive the email?</strong> </p>
 
                                     <ul>
                                         <li>Make sure your email address is entered correctly.</li>

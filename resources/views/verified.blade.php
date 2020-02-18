@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>LightBlocks</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700i&display=swap" rel="stylesheet">
@@ -116,6 +116,12 @@
                 padding: 10px 0px;
             }
 
+            .btn-primary {
+                color: #fff;
+                background-color: #1c2835;
+                border-color: #1c2835;
+            }
+
             .alert-danger ul {
                 list-style: decimal;
             }
@@ -130,25 +136,22 @@
                     width: 200px;
                     margin-bottom: 20px;
                 }
+
+                .verify-title.text-center {
+                    font-size: 20px;
+                }
+
+                .verify-inner.text-center {
+                    font-size: 13px;
+                    margin: 15px;
+                }
             }
 
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+       
 
             <div class="content">
                 
@@ -158,11 +161,11 @@
 
                             <div class="col-md-offset-3 col-md-6">
 
-                                <h2 class="verify-title text-center">Email Verification Successful</h2>
-
                                 <div class="form-section">
 
-                                   <h4>Thanks for completing your registration.</h4>
+                                    <h2 class="verify-title text-center">Email Verification Successful</h2>
+
+                                    <h4 class="verify-inner text-center">Awesome! Your account is now verified.</h4>
 
                                     <div class="form-group text-center">
                                         <a href="{{route('dashboard')}}" class="btn btn-primary">Go to dashboard</a>

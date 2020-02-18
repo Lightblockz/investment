@@ -37,8 +37,8 @@
             }
 
             img.img-responsive.outer-logo {
-                width: 270px;
-                margin-bottom: 20px;
+                width: 230px;
+                margin-bottom: 50px;
             }
 
             .form-section {

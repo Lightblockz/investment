@@ -38,6 +38,7 @@ function investNow() {
           if (response.status == "success" && response.message == "Approved") {
            
               var formData = {
+                email : email,
                 investment_plan_id: plan,
                 user_id: user_id,
                 duration: plan_duration,
@@ -62,7 +63,7 @@ function investNow() {
                   url: url,
                   data: formData,
                   success: function (data) {
-                    
+                    // console.log(data);
                     location.reload();
       
                   },
@@ -157,6 +158,7 @@ function investNow() {
     var crsf_token = $("#crsf_token").val();
 
     var formData = {
+      email : email,
       investment_plan_id: plan,
       user_id: user_id,
       duration: plan_duration,

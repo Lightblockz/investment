@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>LightBlocks</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700i&display=swap" rel="stylesheet">
@@ -43,6 +43,10 @@
                 box-shadow: 0 10px 30px 0 rgba(0,0,0,.15) !important;
             }
             
+            .header-h2.text-center {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
 
             .full-height {
                 height: 100vh;
@@ -143,20 +147,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
+         
             <div class="content">
                 
                     <div class="container">
@@ -165,7 +156,7 @@
 
                             <div class="col-md-offset-4 col-md-4">
 
-                                <h2 class="text-center">Reset your LightBlocks password</h2>
+                                <h2 class="header-h2 text-center">Reset your LightBlocks password</h2>
 
                                 <div class="form-section">
 

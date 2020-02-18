@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Mail\VerificationMail;
+use App\Mail\OrderMail;
 use App\Mail\ResetPasswordMail;
 use UxWeb\SweetAlert\SweetAlert;
 use DB;
@@ -309,9 +310,12 @@ class UserController extends Controller
             
         ]);
 
-
+       
         $my_investment = $this->my_investment->create($request);
 
+        Mail::to($request->email)->send(new OrderMail($request));
+
+        // return "true";
         // if ($my_investment) {
         //     return true;
         // }

@@ -66,6 +66,22 @@
     $('#sidebar').animate({width:'toggle'},350);
   });
 
+  $('#agree-checkbox').click(function() {
+
+      if ($(this).is(':checked')) {
+
+          $('#submit-via-bank').removeAttr('disabled');
+          $('#submit-review').removeAttr('disabled');
+
+      } else {
+
+          $('#submit-via-bank').attr('disabled', 'true');
+          $('#submit-review').attr('disabled', 'true');
+
+      }
+
+  });
+
 
 
 </script>

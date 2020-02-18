@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>LightBlocks</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700i&display=swap" rel="stylesheet">
@@ -33,6 +33,19 @@
             img.img-responsive.outer-logo {
                 width: 270px;
                 margin-bottom: 20px;
+            }
+
+            .success-header{
+                font-size: 20px;
+                margin-bottom: 20px !important;
+            }
+
+            .btn-primary {
+                color: #fff;
+                background-color: #1c2835;
+                border-color: #1c2835;
+                padding: 10px 30px;
+                font-size: 16px;
             }
 
             .form-section {
@@ -109,6 +122,11 @@
                 border: 1px solid #1c2835;
             }
 
+            .verify-title.text-center {
+                font-size: 25px;
+                margin-bottom: 25px;
+            }
+
             .alert-danger {
                 color: #a94442;
                 background-color: #f2dede;
@@ -136,39 +154,26 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
+            
             <div class="content">
                 
                     <div class="container">
                         
                         <div class="row">
 
-                            <div class="col-md-offset-3 col-md-6">
+                            <div class="col-md-offset-3 col-md-6 success-body">
 
                                 <h2 class="verify-title text-center">Verify your Email Address</h2>
 
                                 <div class="form-section">
 
-                                   <h3> <strong>Welcome onboard {{$name}} !</strong> </h3>
+                                   <h3 class="success-header"> <strong>Welcome onboard {{$name}} !</strong> </h3>
 
                                    <h4>Your account has been successfully created</h4>
 
-                                    <h4>An email has been sent to {{$email}}, Kindly follow the instructions in the email to complete your registration.</h4>
+                                    <p>An email has been sent to {{$email}}, Kindly follow the instructions in the email to complete your registration.</p>
 
-                                    <h4> <strong>Didn't receive the email?</strong> </h4>
+                                    <p> <strong>Didn't receive the email?</strong> </p>
 
                                     <ul>
                                         <li>Make sure your email address is entered correctly.</li>
