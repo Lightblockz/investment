@@ -310,10 +310,10 @@ class UserController extends Controller
             
         ]);
 
-       
+       return $request;
         $my_investment = $this->my_investment->create($request);
 
-        Mail::to($request->email)->send(new OrderMail($request));
+        // Mail::to($request->email)->send(new OrderMail($request));
 
         // return "true";
         // if ($my_investment) {
