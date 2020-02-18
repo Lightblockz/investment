@@ -149,10 +149,6 @@ class UserController extends Controller
     public function verifyEmail($id , $token)
     {
         
-        echo $id . "<br>";
-        echo $token . "<br>";
-        dd();
-
         try {
             
             $user = $this->user->fetchUserByToken($id,$token);

@@ -100,6 +100,8 @@ class UserRepository
         return DB::transaction(function() use ($id , $token) {
             
             $userExist =  User::whereId($id)->where('token' , $token)->first();
+
+            dd($userExist);
  
             if ($userExist == null) {
                 
