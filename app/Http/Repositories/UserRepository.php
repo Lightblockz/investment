@@ -67,6 +67,8 @@ class UserRepository
 
            $token = substr(md5(time()), 0, 200);
 
+           dd($token);
+
            $create = User::create([
                'first_name' => $request->first_name,
                'last_name' => $request->last_name,
