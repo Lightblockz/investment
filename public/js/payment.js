@@ -63,8 +63,8 @@ function investNow() {
                   url: url,
                   data: formData,
                   success: function (data) {
-                    console.log(data);
-                    // location.reload();
+                    // console.log(data);
+                    location.reload();
       
                   },
                   error: function (data) {
