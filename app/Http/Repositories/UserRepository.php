@@ -111,10 +111,10 @@ class UserRepository
 
             $user = User::whereEmail(Auth::user()->email)->first();
 
-            dd($user);
+            // dd($user);
 
-            User::whereId($id)->where('token' , $token)->update([
-                'token' => '',
+            $user->update([
+                'token' => NULL,
                 'verified' => 1,
                 'email_verified_at' => Carbon::now()->toDateTimeString(),
                 'last_login' => Carbon::now()->toDateTimeString()
