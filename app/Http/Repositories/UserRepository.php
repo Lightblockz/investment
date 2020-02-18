@@ -161,7 +161,7 @@ class UserRepository
             }
 
             $update = $user->update([
-                'reset_token' => '',
+                'reset_token' => NULL,
                 'password' => $request->password,
                 'last_login' => Carbon::now()->toDateTimeString()
             ]);
