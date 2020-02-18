@@ -20,6 +20,7 @@ class PersonTableSeeder extends Seeder
             'email' => 'hello@lightblocks.biz',
             'password' => 'lightblocks',
             'person' => 1,
+            'verified' => 1,
             'phone' => '',
         ]);
 
