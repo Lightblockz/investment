@@ -31,46 +31,46 @@
         <li class="nav-header">Menu</li>
   
         <li class="has-sub ">
-          <a href="{{route('dashboard')}}">
+          <a href="{{route('admin.dashboard')}}">
             <i class="fa fa-th-large" aria-hidden="true"></i>
             <span>Dashboard</span>
           </a>
         </li>
   
-        <li class="has-sub ">
+        {{-- <li class="has-sub ">
           <a href="" data-toggle="modal" data-target="#invest-modal">
             <i class="icon fa fa-plus"></i>
             <span>Investments</span>
           </a>
-        </li>
+        </li> --}}
   
-        <li class="has-sub ">
+        {{-- <li class="has-sub ">
           <a href="{{route('bank.account')}}">
             <i class="fa fa-university" aria-hidden="true"></i>
             <span>Bank Transfer</span>
           </a>
-        </li>
+        </li> --}}
   
-        <li class="has-sub ">
+        {{-- <li class="has-sub ">
           <a href="{{route('dashboard')}}">
             <i class="fa fa-wallet" aria-hidden="true"></i>
             <span>My Wallet</span>
           </a>
-        </li>
+        </li> --}}
   
-        <li class="has-sub ">
+        {{-- <li class="has-sub ">
           <a href="{{route('all.transaction')}}">
             <i class="fa fa-credit-card" aria-hidden="true"></i>
             <span>Transactions</span>
           </a>
-        </li>
-  
+        </li> --}}
+{{--   
         <li class="has-sub ">
           <a href="{{route('settings')}}">
             <i class="fa fa-cogs" aria-hidden="true"></i>
             <span>Settings</span>
           </a>
-        </li>
+        </li> --}}
   
       </ul>
   

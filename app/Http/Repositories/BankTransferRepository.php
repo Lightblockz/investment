@@ -49,6 +49,7 @@ class BankTransferRepository
                                 '*',
                                 'bank_transfers.id as id'
                             ]);
+        // dd($bank_transfers);
         return $bank_transfers;
 
     }

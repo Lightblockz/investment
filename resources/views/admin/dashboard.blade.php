@@ -81,6 +81,7 @@
 												<input type="text" hidden name="investment_plan_id"  value="{{$pending_transfer->investment_plan_id}}">
 												<input type="text" hidden name="duration"  value="{{$pending_transfer->duration}}">
 												<input type="text" hidden name="amount"  value="{{$pending_transfer->amount}}">
+												<input type="text" hidden name="email"  value="{{$pending_transfer->email}}">
 												<input type="text" hidden name="interest"  value="{{$pending_transfer->interest}}">
 												<input type="text" hidden name="user_id"  value="{{$pending_transfer->user_id}}">
 												<input type="text" hidden name="reference_id"  value="{{$pending_transfer->reference_id}}">
