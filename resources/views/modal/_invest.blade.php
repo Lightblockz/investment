@@ -74,11 +74,12 @@
                     <label class="form-check-label" for="exampleCheck1"><input type="checkbox" class="form-check-input" id="agree-checkbox"> I accept to the terms and conditions</label>
                   </div>
 
-                  <script src="https://js.paystack.co/v1/inline.js"></script>
+                  
                   {{-- <button type="button" onclick="investNowViaTransfer()" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-via-bank" style="font-weight:600;">Pay Via Bank Transfer</button> --}}
                   <button type="submit" class="btn btn-primary btn-block review-modal-close" disabled name="submit-review" id="submit-via-bank" style="font-weight:600;">Pay Via Bank Transfer</a>
 
-                  <button type="button" onclick="investNow()" disabled class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-review" style="font-weight:600;">Pay Online</button>
+                  {{-- <script src="https://js.paystack.co/v1/inline.js"></script>
+                  <button type="button" onclick="investNow()" disabled class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-review" style="font-weight:600;">Pay Online</button> --}}
 
              </div>
 
