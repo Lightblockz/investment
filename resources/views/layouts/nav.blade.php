@@ -3,9 +3,16 @@
   <!-- begin navbar-header -->
   <div class="navbar-header">
     {{-- <a href="/dashboard" class="navbar-brand"><img src="{{asset('/img/logo/54genesymbol.svg')}}"><b> LightBlocks</b></a> --}}
-    <a href="/dashboard" class="navbar-brand">
-      <img src="{{ asset('img/lightblockswhite.png') }}" class="img-responsive inner-logo center-block" alt="">
-    </a>
+    @if (Auth::user()->person == 1)
+      <a href="{{route('admin.dashboard')}}" class="navbar-brand">
+        <img src="{{ asset('img/lightblockswhite.png') }}" class="img-responsive inner-logo center-block" alt="">
+      </a>
+    @else
+      <a href="{{route('dashboard')}}" class="navbar-brand">
+        <img src="{{ asset('img/lightblockswhite.png') }}" class="img-responsive inner-logo center-block" alt="">
+      </a>
+    @endif
+    
     <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>

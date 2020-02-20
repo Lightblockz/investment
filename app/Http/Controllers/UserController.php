@@ -76,21 +76,25 @@ class UserController extends Controller
                 ->withInput();
             }
 
-            $createUser = $this->user->create($request);
+            $createUser = DB::transaction(function() use ($request) {
+            
+                return $this->user->create($request);
 
+            });
+
+            
             if (!$createUser) {
+
                 return back()->withErrors("We are so sorry, your account could not be created. Please try again.");
+
             }
 
             if ($createUser) {
 
-                // redirect()->route('success.mail', ['user' => $createUser]);
-
                 Mail::to($createUser->email)->send(new VerificationMail($createUser));
                
-
                 return view('success', ['email' => $request->email , 'name' => $request->first_name]);
-                // return redirect()->intended('/signin')->withSuccess('Account successfully created. Please sign in.');
+
             }
 
         } catch (\Throwable $th) {
@@ -118,9 +122,18 @@ class UserController extends Controller
             $credentials = $request->only('email', 'password');
 
             if (Auth::attempt($credentials)) {
+                
+                if (Auth::user()->verified != 1) {
+                    
+                    Auth::logout();
+                    
+                    return back()
+                    ->withErrors("Your account has not been verified. Kindly verify by clicking the link sent to your email");
+
+                }
 
                 if (Auth::user()->verified == 1) {
-                    
+                
                     // Authentication passed...
                     if (Auth::user()->person == 1) {
 
@@ -131,9 +144,6 @@ class UserController extends Controller
                     return redirect()->intended('user/account/dashboard');
 
                 }
-
-                return back()
-                ->withErrors("Your account has not been verified. Kindly verify by clicking the link sent to your email");
 
             }else {
                 
