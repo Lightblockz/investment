@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Mail\VerificationMail;
 use App\Mail\OrderMail;
+use App\Mail\BankTransferMail;
 use App\Mail\ResetPasswordMail;
 use UxWeb\SweetAlert\SweetAlert;
 use DB;
@@ -363,25 +364,28 @@ class UserController extends Controller
 
     public function investViaBankView(Request $request)
     {
+        
         // unset($request->_token);
         unset($request['_token']);
         unset($request['submit-review']);
         
         $plan = $this->investment_plan->getInvestmentPlan($request->plan_amount);
+
         $request->merge([
             "amount"=> $plan->amount,
             "interest"=> $plan->interest,
         ]);
-
+            // dd($request->all());
         $request->session()->put('bank_transfer', $request->all());
-        $data = $request->session()->get('bank_transfer');
-        // dd($data);
+        // $data = $request->session()->get('bank_transfer');
+        
         return view('user.payviabank');
     }
 
     public function investViaBank(Request $request)
     {
 
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'receipt' => 'required|image|mimes:jpeg,png,jpg',
         ]);
@@ -408,7 +412,8 @@ class UserController extends Controller
             'duration' => $request->plan_duration,
             'amount' => $request->amount,
             'interest' => $request->interest,
-            'image' => $file_name
+            'image' => $file_name,
+            'email' => $request->email,
         ];
 
         $request = collect($data);
@@ -420,6 +425,10 @@ class UserController extends Controller
             return back()->withErrors("Sorry! Your investment details could not be processed. Please try again");
 
         }
+
+        // dd($request['email']);
+
+        Mail::to($request['email'])->send(new BankTransferMail($request));
 
         return back()->withSuccess("Thank you! Your investment details have been received. It will be confirmed in the next 3 - 6 hours");
         

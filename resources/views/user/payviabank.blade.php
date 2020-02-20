@@ -51,6 +51,7 @@
 
                                     <form action="{{route('investbank')}}" role="form" enctype="multipart/form-data" method="POST">
                                         @csrf
+                                        <input type="text" hidden name="email" value="{{Session::get('bank_transfer')['review-user-email']}}" id="">
                                         <input type="text" hidden name="amount" value="{{Session::get('bank_transfer')['amount']}}" id="">
                                         <input type="text"hidden  name="plan_amount" value="{{Session::get('bank_transfer')['plan_amount']}}" id="">
                                         <input type="text" hidden name="plan_duration" value="{{Session::get('bank_transfer')['plan_duration']}}" id="">
