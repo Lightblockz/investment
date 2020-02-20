@@ -63,4 +63,4 @@
 </head>
 
 <body>
-	{{-- @include('sweet::alert') --}}
+	@include('sweet::alert')
