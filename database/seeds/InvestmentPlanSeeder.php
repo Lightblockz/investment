@@ -16,74 +16,80 @@ class InvestmentPlanSeeder extends Seeder
 
         InvestmentPlan::create([
             'title' => 'Ivory',
-            'amount' => 150000,
+            'amount' => 180000,
             'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Ivory+',
-            'amount' => 200000,
+            'amount' => 360000,
             'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Ivory+',
-            'amount' => 250000,
+            'amount' => 540000,
             'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Serif',
-            'amount' => 300000,
-            'interest' => 0.15,
+            'amount' => 720000,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Silver',
-            'amount' => 350000,
-            'interest' => 0.15,
+            'amount' => 900000,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Gold',
-            'amount' => 500000,
-            'interest' => 0.15,
+            'amount' => 1080000,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Platinum',
-            'amount' => 700000,
-            'interest' => 0.15,
+            'amount' => 1260000,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Exclusive',
-            'amount' => 900000,
-            'interest' => 0.15,
+            'amount' => 1440000,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Exclusive',
-            'amount' => 1500000,
-            'interest' => 0.15,
+            'amount' => 1620000,
+            'interest' => 0.10,
+        ]);
+
+        InvestmentPlan::create([
+            'title' => 'Exclusive',
+            'amount' =>1800000,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Exclusive',
             'amount' => 2000000,
-            'interest' => 0.20,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Exclusive',
             'amount' => 3000000,
-            'interest' => 0.20,
+            'interest' => 0.10,
         ]);
 
         InvestmentPlan::create([
             'title' => 'Exclusive',
             'amount' => 5000000,
-            'interest' => 0.20,
+            'interest' => 0.10,
         ]);
 
     }
