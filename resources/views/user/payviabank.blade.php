@@ -61,9 +61,9 @@
                                             <li>
                                                 Pay the sum of ₦ {{ number_format(Session::get('bank_transfer')['amount']) }} into the account below:
                                                 <br><br>
-                                                <span class="bank-span"><span class="bank-span-inner">Account Number:</span> 0238082884 </span>
+                                                <span class="bank-span"><span class="bank-span-inner">Account Number:</span> 0111375104 </span>
                                                 <br>
-                                                <span class="bank-span"><span class="bank-span-inner">Account Name:</span> T-Oak Soteria Ltd.</span>
+                                                <span class="bank-span"><span class="bank-span-inner">Account Name:</span> Joseph Samuel </span>
                                                 <br>
                                                 <span class="bank-span"><span class="bank-span-inner">Bank:</span> Guaranty Trust Bank</span>
                                             </li>
