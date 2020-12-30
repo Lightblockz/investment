@@ -21,6 +21,12 @@ class UserRepository
         return $emailExist;
     }
 
+    public function tokenExist($token)
+    {
+        $tokenExist = User::where('token', $token)->exists();
+        return $tokenExist;
+    }
+
     public function initiatePasswordReset($email)
     {
 
@@ -31,7 +37,7 @@ class UserRepository
             $userExist =  User::whereEmail($email)->first();
 
             $userExist->update([
-                'reset_token' => $token
+                'token' => $token
             ]);
 
             if ($userExist) {
@@ -49,83 +55,54 @@ class UserRepository
     public function create($request)
     {
 
-        return DB::transaction(function() use ($request) {
+        do {
             
-           $emailExist =  $this->emailExist($request->email);
+            $token = substr(md5(time()), 0, 300);
 
-           if ($emailExist) {
-               
-                return false;
+        } while ($this->tokenExist($token));
 
-           }
+        $create = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'password' => $request->password,
+            'token' => $token,
+        ]);
+        
+        if ($create) {
+            
+            return $create;
 
-           $id = Str::random(8);
+        }
 
-           $prefix = substr($request->first_name, 0, 2);
-
-           $wallet_id = strtoupper($prefix ."-" . $id);
-
-           $token = substr(md5(time()), 0, 200);
-
-           $create = User::create([
-               'first_name' => $request->first_name,
-               'last_name' => $request->last_name,
-               'email' => $request->email,
-               'password' => $request->password,
-               'token' => $token,
-           ]);
-
-           $create_wallet = Wallet::create([
-                'user_id' => $create->id,
-                'wallet_id' => $wallet_id,
-            ]);
-
-            // dd($create);
-           
-           if ($create && $create_wallet) {
-               
-                return $create;
-
-           }
-
-            return false;
-
-        });
+        return false;
 
     }
 
     public function fetchUserByToken($id , $token)
     {
         
-        return DB::transaction(function() use ($id , $token) {
-            
-            $userExist =  User::whereId($id)->where('token' , $token)->first();
+        $userExist =  User::whereId($id)->where('token' , $token)->first();
  
-            if ($userExist == null) {
-                
-                 return false;
- 
-            }
-
-            Auth::login($userExist, true);
-
-            $user = User::whereEmail(Auth::user()->email)->first();
-
-            // dd($user);
-
-            $user->update([
-                'token' => NULL,
-                'verified' => 1,
-                'email_verified_at' => Carbon::now()->toDateTimeString(),
-                'last_login' => Carbon::now()->toDateTimeString()
-            ]);
-
-            // dd($update);
-
-            return true;
+        if ($userExist == null) {
             
-         });
+                return false;
 
+        }
+
+        Auth::login($userExist, true);
+
+        $update = $userExist->update([
+            'token' => NULL,
+            'verified' => 1,
+            'email_verified_at' => Carbon::now()->toDateTimeString(),
+            'last_login' => Carbon::now()->toDateTimeString()
+        ]);
+
+        // DD($update);
+
+        return true;
     }
 
     public function fetchUserByTokenForPasswordReset($email , $token)

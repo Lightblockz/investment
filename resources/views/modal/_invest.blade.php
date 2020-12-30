@@ -29,10 +29,11 @@
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="" id="feature-label">Choose Investment Plan <small> <a href="">see plans here >></a> </small> </label>
-                            <select class="form-control" name="plan_amount" id="plan_amount">
+                            <label for="" id="feature-label">Choose Investment Plan <small> <a href="https://lightblocks.biz/#investment" target="_blank">see plans here >></a> </small> </label>
+                            <select class="form-control" name="plan_amount" id="plan_amount" required>
+                                <option selected disabled>Choose an investment plan</option>
                                 @foreach ($plans as $plan)
-                                <option data-id={{$plan->interest}} value="{{$plan->id}}">{{$plan->amount}}</option>
+                                <option data-id={{ $plan->interest }} value="{{ $plan->id }}">{{ $plan->title }} (₦{{ number_format($plan->min_amount) }} - ₦{{ number_format($plan->max_amount) }})  </option>
                                 @endforeach
                             </select>
     
@@ -41,8 +42,17 @@
 
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label for="" id="feature-label">Enter amount to invest</label>
+                            <input type="text" name="capital_amount" class="form-control" name="amount" id="capital_amount" required>
+                            <p class="small-note"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label for="" id="feature-label">Choose Investment Duration </label>
-                            <select class="form-control" name="plan_duration" id="plan_duration">
+                            <select class="form-control" name="plan_duration" id="plan_duration" required>
+                                <option selected disabled>Choose an option</option>
                                 <option value="92">3 Months</option>
                                 <option value="182">6 Months</option>
                                 <option value="366">12 Months</option>
@@ -51,19 +61,19 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 calculator-div">
                       <h5 class="invest-capital">Capital: <span class="capital-val"></span> </h5>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 calculator-div">
                       <h5 class="invest-interest">Interest: <span class="capital-interest"></span> </h5>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 calculator-div">
                       <h5 class="invest-duration">Duration: <span class="capital-duration"></span> </h5>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 calculator-div">
                       <h5 class="invest-roi">ROI: <span class="capital-roi"></span> </h5>
                     </div>
                     
@@ -71,15 +81,14 @@
                   </div>
 
                   <div class="form-check">
-                    <label class="form-check-label" for="exampleCheck1"><input type="checkbox" class="form-check-input" id="agree-checkbox"> I accept to the terms and conditions</label>
+                    <label class="form-check-label" for="exampleCheck1"><input type="checkbox" class="form-check-input" id="exampleCheck1"> I accept to the terms and conditions</label>
                   </div>
 
-                  
+                  <script src="https://js.paystack.co/v1/inline.js"></script>
                   {{-- <button type="button" onclick="investNowViaTransfer()" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-via-bank" style="font-weight:600;">Pay Via Bank Transfer</button> --}}
-                  <button type="submit" class="btn btn-primary btn-block review-modal-close" disabled name="submit-review" id="submit-via-bank" style="font-weight:600;">Pay Via Bank Transfer</a>
+                  <button type="submit" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-via-bank" style="font-weight:600;">Pay Via Bank Transfer</a>
 
-                  {{-- <script src="https://js.paystack.co/v1/inline.js"></script>
-                  <button type="button" onclick="investNow()" disabled class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-review" style="font-weight:600;">Pay Online</button> --}}
+                  <!-- <button type="button" onclick="investNow()" class="btn btn-primary btn-block review-modal-close" name="submit-review" id="submit-review" style="font-weight:600;">Pay Online</button> -->
 
              </div>
 

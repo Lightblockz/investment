@@ -79,7 +79,6 @@
 							<div class="stats-progress progress">
 								<div class="progress-bar" style="width: 76.3%;"></div>
 							</div>
-							<div class="stats-desc">Better than last week (76.3%)</div>
 						</div>
 					</div>
 				</div>
@@ -117,9 +116,9 @@
 									{{-- <th width="1%"></th> --}}
 									<th class="text-nowrap">Reference ID</th>
 									<th class="text-nowrap">Capital (₦)</th>
-									<th class="text-nowrap">Interest Rate (%)</th>
+									<th class="text-nowrap">Interest (%)</th>
 									{{-- <th class="text-nowrap">Expected Monthly Income (₦)</th> --}}
-									<th class="text-nowrap">Total Withrawable Amount (₦)</th>
+									<th class="text-nowrap">ROI (₦)</th>
 									<th class="text-nowrap">Interest Paid</th>
 									<th class="text-nowrap">Start Date</th>
 									<th class="text-nowrap">Close Date</th>
@@ -140,7 +139,7 @@
 										{{-- <td width="1%" class="f-s-600 text-inverse">{{ $i }}</td>	 --}}
 										<td>{{ $investment->reference_id }}</td>
 										<td>{{ number_format($investment->amount) }}</td>
-										<td>{{ $investment->interest }}</td>
+										<td>{{ $investment->interest * 100 }}</td>
 										{{-- <td>{{ $investment->expected_monthly_interest }}</td> --}}
 										<td>{{ number_format($investment->total_withdrawable_amount) }}</td>
 										<td>{{ number_format($investment->interest_paid) }}</td>

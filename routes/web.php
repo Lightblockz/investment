@@ -73,6 +73,12 @@ Route::group(['prefix' => 'user'], function () {
             Route::get('all', 'UserController@all')->name('all.transaction');
             
         });
+
+        Route::group(['prefix' => 'investment'], function () {
+
+            Route::get('plan/{id}/limit/{amount}', 'InvestmentPlanController@isCapitalWithinInvestmentLimits');
+            
+        });
     
         Route::group(['prefix' => 'settings'], function () {
     

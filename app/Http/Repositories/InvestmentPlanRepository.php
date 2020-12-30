@@ -19,9 +19,17 @@ class InvestmentPlanRepository
         return InvestmentPlan::all();
     }
 
-    public function getInvestmentPlan($id)
+    public function getInvestmentPlan($id, $fields = '*')
     {
-        return InvestmentPlan::findOrFail($id);
+        return InvestmentPlan::select($fields)->whereId($id)->first();
+    }
+
+    public function isCapitalWithinInvestmentLimits($amount, $min_amount, $max_amount)
+    {
+        $amount = (int)$amount;
+ 
+        return (($amount >= $min_amount) && ($amount <= $max_amount));
+   
     }
 
 }

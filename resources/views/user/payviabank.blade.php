@@ -51,7 +51,6 @@
 
                                     <form action="{{route('investbank')}}" role="form" enctype="multipart/form-data" method="POST">
                                         @csrf
-                                        <input type="text" hidden name="email" value="{{Session::get('bank_transfer')['review-user-email']}}" id="">
                                         <input type="text" hidden name="amount" value="{{Session::get('bank_transfer')['amount']}}" id="">
                                         <input type="text"hidden  name="plan_amount" value="{{Session::get('bank_transfer')['plan_amount']}}" id="">
                                         <input type="text" hidden name="plan_duration" value="{{Session::get('bank_transfer')['plan_duration']}}" id="">
@@ -59,11 +58,11 @@
 
                                         <ul class="paybank-ul">
                                             <li>
-                                                Pay the sum of ₦ {{ number_format(Session::get('bank_transfer')['amount']) }} into the account below:
+                                                Pay the sum of ₦ {{ number_format(Session::get('bank_transfer')['capital_amount']) }} into the account below:
                                                 <br><br>
                                                 <span class="bank-span"><span class="bank-span-inner">Account Number:</span> 0111375104 </span>
                                                 <br>
-                                                <span class="bank-span"><span class="bank-span-inner">Account Name:</span> Joseph Samuel </span>
+                                                <span class="bank-span"><span class="bank-span-inner">Account Name:</span> Joseph Samuel</span>
                                                 <br>
                                                 <span class="bank-span"><span class="bank-span-inner">Bank:</span> Guaranty Trust Bank</span>
                                             </li>

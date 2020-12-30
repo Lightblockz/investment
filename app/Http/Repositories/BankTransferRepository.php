@@ -46,10 +46,8 @@ class BankTransferRepository
                             ->join('users' , 'bank_transfers.user_id', '=' , 'users.id')
                             ->join('investment_plans' , 'bank_transfers.investment_plan_id', '=' , 'investment_plans.id')
                             ->get([
-                                '*',
-                                'bank_transfers.id as id'
+                                'bank_transfers.id as id', 'bank_transfers.user_id', 'bank_transfers.reference_id', 'users.first_name', 'users.last_name', 'bank_transfers.investment_plan_id', 'bank_transfers.created_at', 'bank_transfers.duration', 'bank_transfers.amount', 'bank_transfers.interest', 'bank_transfers.image', 'investment_plans.min_amount', 'investment_plans.max_amount', 'users.email'
                             ]);
-        // dd($bank_transfers);
         return $bank_transfers;
 
     }

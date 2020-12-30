@@ -22,10 +22,10 @@
             }
 
             input.form-control {
-                border: none !important;
-                border-bottom: 1px solid #1c283547 !important;
+                /* border: none !important; */
+                /* border-bottom: 1px solid #1c283547 !important; */
                 border-radius: 0px !important;
-                opacity: 0.8;
+                /* opacity: 0.8; */
             }
 
             .signup-iblock.text-center {
@@ -38,8 +38,8 @@
             }
 
             img.img-responsive.outer-logo {
-                width: 230px;
-                margin-bottom: 50px;
+                width: 270px;
+                margin-bottom: 20px;
             }
 
             .form-section {
@@ -197,6 +197,11 @@
                                             <div class="form-group">
                                                 <label for="">Confirm Email Address <small>*</small></label>
                                                 <input type="email" name="email_confirmation" class="form-control" id="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Phone <small>*</small></label>
+                                                <input type="phone" name="phone" class="form-control" id="">
                                             </div>
 
                                             <div class="form-group">

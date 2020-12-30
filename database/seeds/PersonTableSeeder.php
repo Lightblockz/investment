@@ -14,7 +14,14 @@ class PersonTableSeeder extends Seeder
     {
     
         //
-     
+        $user = User::create([
+            'first_name' => 'Hello',
+            'last_name' => 'Lightblocks',
+            'email' => 'hello@lightblocks.biz',
+            'password' => 'lightblocks',
+            'person' => 1,
+            'phone' => '',
+        ]);
 
 
     }

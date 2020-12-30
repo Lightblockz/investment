@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Repositories\UserRepository;
+use App\Http\Repositories\WalletRepository;
 use App\Http\Repositories\TransactionRepository;
 use App\Http\Repositories\InvestmentPlanRepository;
 use App\Http\Repositories\MyInvestmentRepository;
@@ -25,6 +26,7 @@ class UserController extends Controller
 {
 
     private $user;
+    private $wallet;
     private $investment_plan;
     private $transaction;
     private $my_investment;
@@ -39,7 +41,8 @@ class UserController extends Controller
                         MyInvestmentRepository $my_investment,
                         InvestmentLogRepository $investment_log,
                         BankAccountRepository $bank_account,
-                        BankTransferRepository $bank_transfer
+                        BankTransferRepository $bank_transfer,
+                        WalletRepository $wallet
                     )
     {
         $this->user = $user;
@@ -49,6 +52,7 @@ class UserController extends Controller
         $this->investment_log = $investment_log;
         $this->bank_account = $bank_account;
         $this->bank_transfer = $bank_transfer;
+        $this->wallet = $wallet;
         
     }
 
@@ -61,41 +65,53 @@ class UserController extends Controller
     public function create(Request $request)
     {
         
+        
         try {
-            
+
             $validator = Validator::make($request->all(), [
                 'first_name' => 'required',
                 'email' => 'required|unique:users|email|confirmed',
                 'email_confirmation' => 'required|email',
                 'password' => 'required|min:6',
             ]);
-
-            if ($validator->fails()) {
-                return back()
-                ->withErrors($validator)
-                ->withInput();
+    
+            if($validator->fails()){
+                return back()->withErrors($validator)->withInput();
             }
 
-            $createUser = DB::transaction(function() use ($request) {
-            
-                return $this->user->create($request);
+            $user = DB::transaction(function() use ($request) {
+    
+                $createUser = $this->user->create($request);
+                
+                $data = [
+                    'user_id' => $createUser->id,
+                    'first_name' => $createUser->first_name
+                ];
+                
+                $createWallet = $this->wallet->create((Object)$data);
+    
+                if (!$createUser || !$createWallet) {
+                    
+                    return false;
 
-            });
+                }
 
-            
-            if (!$createUser) {
+                return $createUser;
+    
+                
+             });
 
-                return back()->withErrors("We are so sorry, your account could not be created. Please try again.");
 
-            }
+             if ($user) {
 
-            if ($createUser) {
-
-                Mail::to($createUser->email)->send(new VerificationMail($createUser));
-               
+                Mail::to($user->email)->send(new VerificationMail($user));
+                
                 return view('success', ['email' => $request->email , 'name' => $request->first_name]);
-
-            }
+                
+             }
+    
+             return back()->withErrors("There was a problem creating your account");
+            
 
         } catch (\Throwable $th) {
             //throw $th;
@@ -295,6 +311,8 @@ class UserController extends Controller
     public function invest(Request $request)
     {
 
+        // dd($request->all());
+
         $start_date = Carbon::today();
 
         $date = Carbon::today();
@@ -374,7 +392,6 @@ class UserController extends Controller
 
     public function investViaBankView(Request $request)
     {
-        
         // unset($request->_token);
         unset($request['_token']);
         unset($request['submit-review']);
@@ -382,20 +399,19 @@ class UserController extends Controller
         $plan = $this->investment_plan->getInvestmentPlan($request->plan_amount);
 
         $request->merge([
-            "amount"=> $plan->amount,
+            "amount"=> $request->capital_amount,
             "interest"=> $plan->interest,
         ]);
-            // dd($request->all());
+
         $request->session()->put('bank_transfer', $request->all());
-        // $data = $request->session()->get('bank_transfer');
-        
+        $data = $request->session()->get('bank_transfer');
+        // dd($data);
         return view('user.payviabank');
     }
 
     public function investViaBank(Request $request)
     {
 
-        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'receipt' => 'required|image|mimes:jpeg,png,jpg',
         ]);
@@ -407,27 +423,26 @@ class UserController extends Controller
         }
         
         $now = (Integer)((now()->timestamp) / 1000000);
-        $rand = rand(1000,10000);
+        $rand = rand(10,100);
 
         $receipt = $request->file('receipt');
         $file_name = time().'_'.$rand.'.'.$receipt->getClientOriginalExtension();
 
         $destinationPath = public_path('/receipt');
-        $receipt->move($destinationPath, $file_name);
+        // $receipt->move($destinationPath, $file_name);
 
         $data = [
             'user_id' => Auth::user()->id,
             'investment_plan_id' => $request->plan_amount,
-            'reference_id' => "LBK${rand}${now}",
+            'reference_id' => "LB${rand}${now}",
             'duration' => $request->plan_duration,
             'amount' => $request->amount,
             'interest' => $request->interest,
-            'image' => $file_name,
-            'email' => $request->email,
+            'image' => $file_name
         ];
 
         $request = collect($data);
-        
+
         $save = $this->bank_transfer->create($request);
 
         if (!$save) {
@@ -438,7 +453,7 @@ class UserController extends Controller
 
         // dd($request['email']);
 
-        Mail::to($request['email'])->send(new BankTransferMail($request));
+        Mail::to(Auth::user()->email)->send(new BankTransferMail($request));
 
         return back()->withSuccess("Thank you! Your investment details have been received. It will be confirmed in the next 3 - 6 hours");
         
