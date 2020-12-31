@@ -429,7 +429,7 @@ class UserController extends Controller
         $file_name = time().'_'.$rand.'.'.$receipt->getClientOriginalExtension();
 
         $destinationPath = public_path('/receipt');
-        // $receipt->move($destinationPath, $file_name);
+        $receipt->move($destinationPath, $file_name);
 
         $data = [
             'user_id' => Auth::user()->id,
