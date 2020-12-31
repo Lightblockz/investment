@@ -202,7 +202,7 @@ $('#document').ready(function () {
     var plan_id = $("#plan_amount :selected").val();
     var amount = Number($("#capital_amount").val());
     
-    var url = `/user/investment/plan/${plan_id}/limit/${amount}`;
+    var url = `/index.php/user/investment/plan/${plan_id}/limit/${amount}`;
 
     $.ajaxSetup({
         headers: {
