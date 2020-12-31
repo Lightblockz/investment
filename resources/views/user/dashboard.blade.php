@@ -143,8 +143,8 @@
 										{{-- <td>{{ $investment->expected_monthly_interest }}</td> --}}
 										<td>{{ number_format($investment->total_withdrawable_amount) }}</td>
 										<td>{{ number_format($investment->interest_paid) }}</td>
-										<td>{{ $investment->start_date }}</td>
-										<td>{{ $investment->end_date }}</td>
+										<td>{{ Carbon\Carbon::parse($investment->start_date)->toDateString() }}</td>
+										<td>{{ Carbon\Carbon::parse($investment->end_date)->toDateString() }}</td>
 										<td>{{ $investment->status }}</td>
 									</tr>
 	

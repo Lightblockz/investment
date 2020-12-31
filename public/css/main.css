@@ -217,6 +217,19 @@ a.btn.btn-primary.btn-block.fundwallet {
     border: 1px solid #59c7c7;
 }
 
+.small-note {
+    color: red;
+    font-size: 13px;
+}
+
+label#feature-label {
+    font-size: 14px;
+}
+
+.calculator-div {
+    margin: 10px 0px;
+}
+
 .sidebar .nav>li {
     position: relative;
     font-size: 15px;

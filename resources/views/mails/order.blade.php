@@ -574,7 +574,7 @@ width: 25%!important
 																						<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;background-color:transparent;padding-top:0;padding-right:0;padding-bottom:30px;padding-left:0;border-top:1px solid #ededed;border-right:1px solid #ededed;border-bottom:1px solid #ededed;border-left:1px solid #ededed">
 																							
 																							<div style="font-size:14px;line-height:17px;text-align:center;color:white;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px;background:#0d3e65">
-																								<h2 style="margin:0;font-size:22px;line-height:17px;text-align:center">Your Investment has been Initiated</h2>
+																								<h2 style="margin:0;font-size:18px;line-height:17px;text-align:center">Your Investment has been Initiated</h2>
 																							</div>
                                                                                             
                                                                                             <div style="margin:0;padding-top:10px;padding-bottom:10px;padding-left:15px;padding-right:15px;background-color:#f9f9f9;border-radius:6px;color:#555555">
@@ -633,29 +633,14 @@ width: 25%!important
 																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
 																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
 																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;border-bottom:solid 1px #ededed;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
-																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Date of Order Creation&nbsp;
-																														<strong style="float:right">{{$order->start_date}}</strong>
+																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Date&nbsp;
+																														<strong style="float:right">{{ Carbon\Carbon::parse($order->start_date)->toDateString() }}</strong>
 																														<br>
 																													</p>
 																												</div>
 																											</div>
 																										</td>
 																									</tr>
-																									
-																									<tr style="vertical-align:top">
-																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
-																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
-																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
-																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Termination Date&nbsp;
-																														<strong style="float:right">
-																															{{$order->end_date}} </strong>
-																														<br>
-																													</p>
-																												</div>
-																											</div>
-																										</td>
-																									</tr>
-																									
 																									
 																								</tbody>
                                                                                             </table>
@@ -706,7 +691,33 @@ width: 25%!important
 																												</div>
 																											</div>
 																										</td>
-                                                                                                    </tr>
+																									</tr>
+																									<tr style="vertical-align:top">
+																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
+																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;border-bottom:solid 1px #ededed;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
+																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Start Date&nbsp;
+																														<strong style="float:right">{{ Carbon\Carbon::parse($order->start_date)->toDateString() }}</strong>
+																														<br>
+																													</p>
+																												</div>
+																											</div>
+																										</td>
+																									</tr>
+																									
+																									<tr style="vertical-align:top">
+																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:0;padding-right:20px;padding-bottom:0;padding-left:20px">
+																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
+																												<div style="font-size:14px;line-height:17px;text-align:left;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;padding-top:15px;padding-right:10px;padding-bottom:15px;padding-left:10px">
+																													<p style="margin:0;font-size:14px;line-height:17px;text-align:left">Termination Date&nbsp;
+																														<strong style="float:right">
+																															{{ Carbon\Carbon::parse($order->end_date)->toDateString() }} </strong>
+																														<br>
+																													</p>
+																												</div>
+																											</div>
+																										</td>
+																									</tr>
                                                                                                     @php
                                                                                                         $interest = ($order->interest * 100);
                                                                                                     @endphp
@@ -809,7 +820,7 @@ width: 25%!important
 																										<td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px">
 																											<div style="color:#555555;line-height:120%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
 																												<div style="font-size:12px;line-height:14px;text-align:center;color:#555555;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif">
-																													<p style="margin:0;font-size:12px;line-height:14px;text-align:center">© LightBlocks 2020
+																													<p style="margin:0;font-size:12px;line-height:14px;text-align:center">© LightBlocks {{ Carbon\Carbon::now()->isoFormat('YYYY') }}
 																													</p>
 																												</div>
 																											</div>
