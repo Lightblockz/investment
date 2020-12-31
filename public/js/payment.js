@@ -244,14 +244,9 @@ $('#document').ready(function () {
 });
 
 
-
-
-
-
-
-$(document).load(function () {
-  $(".check-icon").hide();
-  setTimeout(function () {
-    $(".check-icon").show();
-  }, 10);
-});
+// $(document).load(function () {
+//   $(".check-icon").hide();
+//   setTimeout(function () {
+//     $(".check-icon").show();
+//   }, 10);
+// });
