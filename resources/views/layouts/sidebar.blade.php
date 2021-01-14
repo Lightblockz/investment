@@ -34,7 +34,7 @@
         </a>
       </li>
 
-      <li class="has-sub ">
+      <li class="has-sub " id="invest-nav">
         <a href="" data-toggle="modal" data-target="#invest-modal">
           <i class="icon fa fa-plus"></i>
           <span>Invest</span>

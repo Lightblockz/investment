@@ -243,6 +243,10 @@ $('#document').ready(function () {
 
 });
 
+$('#invest-modal').on('click', function () {
+  $('#sidebar').css("display", "none");
+})
+
 
 // $(document).load(function () {
 //   $(".check-icon").hide();
