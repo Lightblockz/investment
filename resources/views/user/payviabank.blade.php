@@ -10,7 +10,7 @@
 
             <div class="row">
 
-				<div class="offset-md-3 col-md-6">
+				<div class="col-md-12">
 
 					<div class="row">
 
@@ -38,6 +38,7 @@
                                     @endforeach
                                 </div>
                             @endif
+
 
                             <div class="col-md-12" style="color:#fff">
 
@@ -72,16 +73,30 @@
                                                 <input type="file" name="receipt" class="btn btn-primary btn-block upload-button">
                                                 <small>valid file formats (.png , .jpg, .jpeg)</small>
                                             </li>
-                                            <div>
-                                                <button type="submit" class="btn btn-primary pull-right btn-complete">Complete</button>
-                                            </div>
+                                            
                                         </ul>
 
+                                        @include('../layouts/mou')
+
+                                        <div>
+                                            <button type="submit" class="btn btn-primary pull-right btn-complete">Complete</button>
+                                        </div>
+
                                     </form>
+
+                                   
+
+                                  
             
                                 </div>
 
+                               
+
+                              
+
                             </div>
+
+                            
 
                         @endif
 
