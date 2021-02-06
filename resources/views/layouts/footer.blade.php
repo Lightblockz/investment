@@ -82,6 +82,20 @@
 
   });
 
+  $('#mou-check').click(function() {
+
+if ($(this).is(':checked')) {
+
+    $('#invest-complete-btn').removeAttr('disabled');
+
+} else {
+
+    $('#invest-complete-btn').attr('disabled', 'true');
+
+}
+
+});
+
 
 
 </script>

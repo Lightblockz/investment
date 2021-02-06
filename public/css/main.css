@@ -4,9 +4,11 @@ img.img-responsive.success-gif {
 }
 
 .mou-div {
-    margin: 100px 0px;
-    color: #fff;
-    padding: 30px;
+    /* margin: 100px 0px; */
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 35px;
 }
 
 .mou-header {
@@ -92,7 +94,7 @@ span.bank-span-inner {
     color: #ecb82e;
 }
 
-.btn.btn-primary.btn-block.upload-button {
+.btn.btn-primary.upload-button {
     background: #ecb82e;
     border: 1px solid #ecb82e;
     padding: 10px;

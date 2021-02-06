@@ -70,28 +70,38 @@
                                             <li>
                                                 Upload your proof of payment by clicking the button below
                                                 <br>
-                                                <input type="file" name="receipt" class="btn btn-primary btn-block upload-button">
+                                                <input type="file" name="receipt" class="btn btn-primary upload-button">
                                                 <small>valid file formats (.png , .jpg, .jpeg)</small>
                                             </li>
                                             
                                         </ul>
 
-                                        @include('../layouts/mou')
+
+                                            
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="mou-check">
+                                            <label style="color:#fff;" class="form-check-label" for="exampleCheck1">
+                                            Check here to indicate that you have read and agreed to the
+                                            <a  style="color:dodgerblue; text-decoration: underline" href="" data-toggle="modal" data-target="#mou-modal">
+                                                 MEMORANDUM OF UNDERSTANDING
+                                            </a>
+                                            </label>
+                                        </div>
+
+                                        
+                                        <br><br>
 
                                         <div>
-                                            <button type="submit" class="btn btn-primary pull-right btn-complete">Complete</button>
+                                            <button id="invest-complete-btn" disabled="true" type="submit" class="btn btn-primary pull-right btn-block btn-complete">Complete</button>
                                         </div>
 
                                     </form>
-
-                                   
-
                                   
             
                                 </div>
 
                                
-
+                                @include('../modal/_mou')
                               
 
                             </div>
@@ -121,4 +131,7 @@
 	<!-- end page container -->
 
 	@include('modal._addacount')
+
+
 @endsection
+
