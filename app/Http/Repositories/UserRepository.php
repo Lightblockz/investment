@@ -37,7 +37,7 @@ class UserRepository
             $userExist =  User::whereEmail($email)->first();
 
             $userExist->update([
-                'token' => $token
+                'reset_token' => $token
             ]);
 
             if ($userExist) {
