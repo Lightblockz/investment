@@ -1,3 +1,26 @@
+#signal-form label {
+    color: #fff;
+}
+
+#signal-dropdown {
+    display: inline-flex;
+}
+
+#signals a {
+    color: #fff;
+    font-size: 12px;
+}
+
+#signals li {
+    list-style-type: none;
+}
+
+#signal-dropdown:after {
+
+    margin-top: 10px;
+}
+
+
 img.img-responsive.success-gif {
     width: 129px;
     align-items: center;

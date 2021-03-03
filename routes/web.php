@@ -95,6 +95,12 @@ Route::group(['prefix' => 'user'], function () {
 Route::group(['prefix' => 'admin' , 'middleware' => ['auth' , 'admin']], function () {
 
     Route::get('account/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::post('trade/signals', 'AdminController@createTradeSignal')->name('create.signal');
+    Route::get('trade/signals/unsent', 'AdminController@unsentSignals')->name('unsent.signals');
+    Route::get('trade/signals/send/{id}', 'AdminController@sendSignal')->name('send.signals');
+    Route::get('/trade/signals', function () {
+        return view('admin.signal.create');
+    })->name('admin.get.signals');
 
         Route::group(['prefix' => 'transactions'], function () {
 

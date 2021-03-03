@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Repositories\UserRepository;
+use App\Http\Repositories\TradeSignalRepository;
 use App\Http\Repositories\TransactionRepository;
 use App\Http\Repositories\InvestmentPlanRepository;
 use App\Http\Repositories\MyInvestmentRepository;
@@ -28,6 +29,7 @@ class AdminController extends Controller
     private $investment_log;
     private $bank_account;
     private $bank_transfer;
+    private $signal;
 
     public function __construct (
                         UserRepository $user , 
@@ -36,7 +38,8 @@ class AdminController extends Controller
                         MyInvestmentRepository $my_investment,
                         InvestmentLogRepository $investment_log,
                         BankAccountRepository $bank_account,
-                        BankTransferRepository $bank_transfer
+                        BankTransferRepository $bank_transfer,
+                        TradeSignalRepository $signal
                     )
     {
         $this->user = $user;
@@ -46,7 +49,80 @@ class AdminController extends Controller
         $this->investment_log = $investment_log;
         $this->bank_account = $bank_account;
         $this->bank_transfer = $bank_transfer;
+        $this->signal = $signal;
         
+    }
+
+    public function smsBootstrap($phones = [], $body)
+    {
+        $ebulk = [
+            'url' => env('EBULK_SMS', false),
+            'username' => env('EBULK_SMS_USERNAME', false),
+            'key' => env('EBULK_SMS_KEY', false)
+        ];
+
+        $auth = new \stdClass();
+        $auth->username = $ebulk['username'];
+        $auth->apikey = $ebulk['key'];
+
+        $message = new \stdClass();
+        $message->sender = 'LightBlocks';
+        $message->messagetext = $body;
+        $message->flash = '0';
+
+        $recipients = new \stdClass();
+        $recipients->gsm = $phones;
+
+        $setup = new \stdClass();
+        $setup->auth = $auth;
+        $setup->message = $message;
+        $setup->recipients = $recipients;
+
+        $payload = new \stdClass();
+        $payload->SMS = $setup;
+
+        
+
+        try {
+
+            $payload = json_encode($payload, TRUE);
+
+            // dd($payload);
+            
+            $curl = curl_init();
+            
+            curl_setopt_array(
+                $curl, array(
+                  CURLOPT_URL => $ebulk['url'],
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => "",
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 30,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => "POST",
+                  CURLOPT_POSTFIELDS => $payload,
+                  CURLOPT_HTTPHEADER => array(
+                    "Content-Type: application/json"
+                ),
+            ));
+    
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+            $response = Json_decode($response);
+            curl_close($curl);
+
+            dd($response);
+    
+            if ($response == NULL) {
+                return false;
+            }else {
+                return $response;
+            }
+    
+          } catch (\Exception $e) {
+    
+          }
+
     }
 
     public function dashboard()
@@ -60,6 +136,112 @@ class AdminController extends Controller
             ]
         );
 
+    }
+
+    public function createTradeSignal(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'coin_name' => 'required',
+            'trade_action' => 'required',
+            'trade_type' => 'required',
+            'entry_point' => 'required',
+            'exit_point' => 'required',
+            'stop_loss' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+            ->withErrors($validator)
+            ->withInput();
+        }
+
+
+        try {
+            
+            $signal = $this->signal->createTradeSignal($request->all());
+
+            if ($signal) {
+
+                return back()->withSuccess("Great! Transaction has been approved.");
+                
+
+            }
+
+            return back()->withErrors("There was an error creating this trade signal. Please try again")->withInput();
+
+
+        } catch(\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+    }
+
+    public function signal()
+    {
+        
+        $pending_bank_transfer = $this->bank_transfer->pendingBankTransfer();
+
+        return view('admin.dashboard' ,
+            [
+             'pending_bank_transfer' => $pending_bank_transfer
+            ]
+        );
+
+    }
+
+    public function unsentSignals()
+    {
+        
+        $signals = $this->signal->unsentSignals();
+
+        return view('admin.signal.unsent', [ 'signals' => $signals]);
+
+    }
+
+    public function getSignalSubscribers()
+    {
+        return $this->signal->getSignalSubscribers();
+    }
+
+    public function sendSignal($id)
+    {
+        $signal = $this->signal->getSignal($id);
+        
+        $subscribers = $this->getSignalSubscribers();
+
+        $subscribers->chunk(70)->each(function ($users) use($signal) {
+
+            $emails = [];
+            $phones = [];
+
+
+            foreach ($users as $user)
+            {
+                array_push($emails, $user->email);
+
+                if ($user->phone) {
+
+                    $phone = new \stdClass();
+                    $phone->msidn = $user->phone;
+                    $phone->msgid = $user->phone."_".Date('M').Date('d');
+
+                    // $phone_payload = \json_encode($phone_payload, TRUE);
+                    array_push($phones, $phone);
+                }
+
+            }
+
+            $body = "Trade Type: {$signal->trade_type}; Trade Action: {$signal->trade_action}; Coin: {$signal->coin_name}; Entry Point: {$signal->entry_point}; Exit Point: {$signal->exit_point}; Stop Loss: {$signal->stop_loss}";
+
+            $ebulk  = $this->smsBootstrap($phones, $body);
+
+
+        });
+
+        
+
+        // dd($subscribers);
     }
 
     

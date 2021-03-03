@@ -36,7 +36,21 @@
             <span>Dashboard</span>
           </a>
         </li>
-  
+
+        <li class="has-sub ">
+            <a id="signal-dropdown" href="#signals" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-th-large" aria-hidden="true"></i><span>Trade signals</span></a>
+            <ul class="collapse side" id="signals" style="line-height: 2 !important;">
+
+                <li>
+                    <a href="{{route('admin.get.signals')}}"> Create Signal</a>
+                </li>
+                <li>
+                    <a href="{{route('unsent.signals')}}">Unsent Signals</a>
+                </li>
+
+            </ul>
+        </li>
+
         {{-- <li class="has-sub ">
           <a href="" data-toggle="modal" data-target="#invest-modal">
             <i class="icon fa fa-plus"></i>
