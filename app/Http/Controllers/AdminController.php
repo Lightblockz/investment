@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Mail\VerificationMail;
+use App\Mail\TradeSignalMail;
 use App\Mail\ResetPasswordMail;
 use UxWeb\SweetAlert\SweetAlert;
+use App\Events\SignalEmail;
 
 class AdminController extends Controller
 {
@@ -110,8 +112,6 @@ class AdminController extends Controller
             $err = curl_error($curl);
             $response = Json_decode($response);
             curl_close($curl);
-
-            dd($response);
     
             if ($response == NULL) {
                 return false;
@@ -206,6 +206,8 @@ class AdminController extends Controller
 
     public function sendSignal($id)
     {
+        ini_set('max_execution_time', '10000');
+
         $signal = $this->signal->getSignal($id);
         
         $subscribers = $this->getSignalSubscribers();
@@ -226,20 +228,30 @@ class AdminController extends Controller
                     $phone->msidn = $user->phone;
                     $phone->msgid = $user->phone."_".Date('M').Date('d');
 
-                    // $phone_payload = \json_encode($phone_payload, TRUE);
                     array_push($phones, $phone);
                 }
 
             }
 
+            event(new SignalEmail($signal, $emails));
+            // Mail::to('chidi.nkwocha@54gene.com')->send(new TradeSignalMail($signal));
+
             $body = "Trade Type: {$signal->trade_type}; Trade Action: {$signal->trade_action}; Coin: {$signal->coin_name}; Entry Point: {$signal->entry_point}; Exit Point: {$signal->exit_point}; Stop Loss: {$signal->stop_loss}";
 
-            $ebulk  = $this->smsBootstrap($phones, $body);
+            // $ebulk  = $this->smsBootstrap($phones, $body);
+
+        //    if (!$ebulk->response->status) {
+               
+        //         return back()->withErrors("There was an error sending this signal. If this issue persist, please contact the tech team.");
+
+        //    }
 
 
         });
 
-        
+        return redirect()->intended('/admin/trade/signals/unsent')->withSuccess('Great! Trade signal was sent successfully');
+
+        ini_set('max_execution_time', '120');
 
         // dd($subscribers);
     }

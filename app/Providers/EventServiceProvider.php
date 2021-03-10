@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Auth\Events\Registered;
+use App\Events\SignalEmail;
+use App\Listeners\SignalEmailListener;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
@@ -17,6 +19,10 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+
+        SignalEmail::class => [
+            SignalEmailListener::class,
         ],
     ];
 
