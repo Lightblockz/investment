@@ -14,6 +14,40 @@ use Illuminate\Support\Str;
 class TradeSignalRepository
 {
 
+    public function createSignalSubscription($request)
+    {
+        return DB::transaction(function() use ($request) {
+
+            $start_date = Carbon::now()->toDateString();
+
+            $end_date = Carbon::now()->addMonth()->toDateString();
+
+            $request = (Object)$request;
+            
+            $signal =  TradeSignalsSubscription::create([
+
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'signal_plan_id' => 1,
+                'via_email' => $request->via_email,
+                'via_phone' => $request->via_phone,
+                'duration' => '30',
+                'start_date' => $start_date,
+                'end_date' => $end_date,
+                'amount_paid' => $request->amount_paid
+                
+            ]);
+
+            if ($signal) {
+                return $signal;
+            }
+
+            return false;
+
+         });
+    }
+
+
     public function createTradeSignal($request)
     {
 
